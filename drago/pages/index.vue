@@ -530,5 +530,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{}>();
+useHead({
+  titleTemplate: 'Drago Psicologia',
+});
 </script>

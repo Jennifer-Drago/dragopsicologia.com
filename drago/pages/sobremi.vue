@@ -81,3 +81,9 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'Sobre mí',
+});
+</script>

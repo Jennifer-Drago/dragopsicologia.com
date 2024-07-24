@@ -187,6 +187,7 @@ legend {
 
 textarea {
   overflow: auto;
+  resize: vertical;
 }
 
 optgroup {
@@ -2256,7 +2257,7 @@ textarea.w-select {
 
 .w-checkbox-input {
   float: left;
-  margin: 4px 0 0 -20px;
+  margin: 7px 0 0 -20px;
   line-height: normal;
 }
 

@@ -121,3 +121,9 @@
     </p>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  title: 'Política de privacidad',
+});
+</script>
