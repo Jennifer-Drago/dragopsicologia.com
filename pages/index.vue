@@ -535,7 +535,7 @@
 const { seo } = useAppConfig();
 
 useHead({
-  titleTemplate: (seo as any)?.siteName,
+  titleTemplate: seo.siteName,
 });
 
 const { data: content } = await useAsyncData('home', () =>
