@@ -1,3 +1,3 @@
 ---
-cta: Contacta
+cta: Contacta conmigo
 ---
