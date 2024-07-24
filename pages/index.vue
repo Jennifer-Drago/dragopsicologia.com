@@ -13,9 +13,9 @@
                 <br />Psicóloga en Cubelles y Vilanova i la Geltrú
               </h1>
             </div>
-            <nuxt-link to="/contacto" class="button-color-3 w-button"
-              >Contacta conmigo</nuxt-link
-            >
+            <nuxt-link to="/contacto" class="button-color-3 w-button">{{
+              content.cta
+            }}</nuxt-link>
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
@@ -533,4 +533,8 @@
 useHead({
   titleTemplate: 'Drago Psicologia',
 });
+
+const { data: content } = await useAsyncData('home', () =>
+  queryContent('/').findOne()
+);
 </script>
