@@ -9,8 +9,10 @@
           <div class="hero-title-block">
             <div class="hero-title-wrapper">
               <h1 class="hero-title-text">
-                Hola! <span class="colored-text">Soy Jennifer Drago.</span>
-                <br />Psicóloga en Cubelles y Vilanova i la Geltrú
+                {{ content.title1 }}&nbsp;<span class="colored-text">{{
+                  content.title2
+                }}</span>
+                <br />{{ content.title3 }}
               </h1>
             </div>
             <nuxt-link to="/contacto" class="button-color-3 w-button">{{
@@ -530,8 +532,10 @@
 </template>
 
 <script setup lang="ts">
+const { seo } = useAppConfig();
+
 useHead({
-  titleTemplate: 'Drago Psicologia',
+  titleTemplate: (seo as any)?.siteName,
 });
 
 const { data: content } = await useAsyncData('home', () =>

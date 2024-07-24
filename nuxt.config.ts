@@ -19,5 +19,8 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/content", "@nuxthq/studio"]
+  modules: ['@nuxt/content', '@nuxthq/studio'],
+  studio: {
+    enabled: true,
+  },
 });
