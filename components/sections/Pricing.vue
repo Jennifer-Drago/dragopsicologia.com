@@ -4,7 +4,7 @@
       <div class="section-title-wrapper">
         <div class="section-grey-line"></div>
         <div class="section-colored-line-1"></div>
-        <h1 class="section-title-text">{{ title }}</h1>
+        <h1 class="section-title-text">{{ pricingPage?.title }}</h1>
         <div class="section-colored-line-1"></div>
         <div class="section-grey-line"></div>
       </div>
@@ -52,9 +52,10 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{ title: string }>(), { title: 'Tarifas' });
-
 const { data: pricingSection } = useAsyncData('pricingSection', () =>
   queryContent('sections', 'tarifas').findOne()
+);
+const { data: pricingPage } = useAsyncData('pricingPage', () =>
+  queryContent('/tarifas').findOne()
 );
 </script>

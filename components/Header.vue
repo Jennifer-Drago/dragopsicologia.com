@@ -9,7 +9,7 @@
     class="navbar shadow-nav w-nav"
   >
     <div class="navbar-wrapper">
-      <nuxt-link to="/" class="navbar-brand w-nav-brand"
+      <nuxt-link to="/" class="navbar-brand w-nav-brand" @click="isOpen = false"
         ><img
           src="~/assets/img/62aa145b82827a6d64c6b7e6_marca_basica_horizontal.svg"
           height="60"
@@ -100,28 +100,7 @@ const isCurrent = (routePath: string) =>
   );
 
 // Static data
-const pages = [
-  {
-    link: '/',
-    title: 'Inicio',
-  },
-  {
-    link: '/servicios',
-    title: 'Servicios',
-  },
-  {
-    link: '/sobremi',
-    title: 'Sobre mí',
-  },
-  {
-    link: '/tarifas',
-    title: 'Tarifas',
-  },
-  {
-    link: '/contacto',
-    title: 'Contacto',
-  },
-];
+const pages = useAppConfig().links.header || [];
 </script>
 
 <style lang="css" scoped>

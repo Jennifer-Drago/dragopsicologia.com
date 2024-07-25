@@ -89,25 +89,25 @@
       >
         <strong>Email:</strong> {{ globalConfig.mail }}
       </div>
-      <div
+      <!-- <div
         v-if="globalConfig.address"
         id="w-node-a5607c4e-3f8d-a6eb-651a-f019b0397e8a-82790fa4"
         class="contact-info-text"
       >
         <strong>Dirección:</strong> {{ globalConfig.address }}
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-useHead({
-  title: 'Contacto',
-});
-
 const { globalConfig } = useAppConfig();
 
 const { data: contactContent } = useAsyncData('contactPage', () =>
   queryContent('/contacto').findOne()
 );
+
+useHead({
+  title: contactContent.value?.title,
+});
 </script>

@@ -3,6 +3,27 @@ import appConfig from './app.config';
 
 export default defineNuxtSchema({
   appConfig: {
+    links: group({
+      title: 'Configuración de enlaces',
+      icon: 'i-ph-list-bullets',
+      fields: {
+        header: field({
+          type: 'array',
+          title: 'Links Menú Header',
+          descripción:
+            'Links del menú hamburguesa (en móvil) y la cabecera (en escritorio)',
+          icon: 'i-ph-rows-plus-top-bold',
+          default: [],
+        }),
+        footer: field({
+          type: 'array',
+          title: 'Links Footer',
+          descripción: 'Links del footer',
+          icon: 'i-ph-rows-plus-bottom-bold',
+          default: [],
+        }),
+      },
+    }),
     globalConfig: group({
       title: 'Config',
       description: 'Datos globales',
@@ -28,6 +49,27 @@ export default defineNuxtSchema({
           description: 'Dirección física',
           icon: 'i-ph-map-pin',
           default: '',
+        }),
+        siteUrl: field({
+          type: 'string',
+          title: 'URL del sitio',
+          description: 'Se para SEO y para el aviso legal',
+          icon: 'i-mdi-laptop',
+          default: 'https://www.dragopsicologia.com/',
+        }),
+        cif: field({
+          type: 'string',
+          title: 'CIF',
+          description: '',
+          icon: 'i-ph-number-circle-eight-fill',
+          default: '46968604M',
+        }),
+        name: field({
+          type: 'string',
+          title: 'Name',
+          description: '',
+          icon: 'i-ph-user',
+          default: 'Jennifer Drago Gómez',
         }),
       },
     }),

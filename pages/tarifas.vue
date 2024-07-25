@@ -1,13 +1,13 @@
 <template>
-  <SectionsPricing :title="pricingPage?.title" />
+  <SectionsPricing />
 </template>
 
 <script setup lang="ts">
-useHead({
-  title: 'Tarifas',
-});
-
-const { data: pricingPage } = useAsyncData('pricingPage', () =>
+const { data: page } = useAsyncData('pricingPage', () =>
   queryContent('/tarifas').findOne()
 );
+
+useHead({
+  title: page.value?.title,
+});
 </script>

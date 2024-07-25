@@ -3,16 +3,33 @@
     <div class="w-layout-grid footer-grid">
       <div class="footer-column-3">
         <div class="w-layout-grid footer-links-grid">
-          <nuxt-link to="/aviso-legal" class="footer-link w-button"
-            >Aviso legal</nuxt-link
-          ><nuxt-link
-            to="/politica-de-privadidad"
-            aria-current="page"
-            class="footer-link w-button w--current"
-            >Política de privacidad</nuxt-link
+          <nuxt-link
+            v-for="page in links"
+            :to="page.link"
+            v-bind="{
+              ...(isCurrent(page.link) && { ariaCurrent: 'page' }),
+            }"
+            class="footer-link w-button"
+            :class="{
+              'w--current': isCurrent(page.link),
+            }"
+            >{{ page.title }}</nuxt-link
           >
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+// is Current
+const router = useRouter();
+const currentMatchedRoute = computed(() => router.currentRoute.value.matched);
+const isCurrent = (routePath: string) =>
+  currentMatchedRoute.value.some(
+    (currentRoute) => currentRoute.path === routePath
+  );
+
+// Static data
+const links = useAppConfig().links.footer || [];
+</script>

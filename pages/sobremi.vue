@@ -9,12 +9,12 @@
           <div class="hero-title-block">
             <div class="hero-title-wrapper">
               <h1 class="hero-title-text">
-                {{ content.heroTitle1 }}
-                <span class="colored-text">{{ content.heorTitle2 }}</span>
+                {{ content?.heroTitle1 }}
+                <span class="colored-text">{{ content?.heorTitle2 }}</span>
               </h1>
             </div>
             <nuxt-link to="/contacto" class="button-color-3 w-button">{{
-              content.cta
+              content?.cta
             }}</nuxt-link>
           </div>
           <div class="hero-footer">
@@ -66,7 +66,7 @@
       </div>
       <div class="w-richtext">
         <div v-if="content">
-          <ContentRenderer :value="content" />
+          <ContentRenderer :value="content || {}" />
         </div>
       </div>
     </div>
@@ -74,13 +74,13 @@
 </template>
 
 <script setup lang="ts">
-useHead({
-  title: 'Sobre mí',
-});
-
 const { globalConfig } = useAppConfig();
 
 const { data: content } = await useAsyncData('sobremi', () =>
   queryContent('/sobremi').findOne()
 );
+
+useHead({
+  title: content.value?.title,
+});
 </script>
