@@ -21,12 +21,13 @@
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
-              <nuxt-link to="tel:+34634586724" class="link-2"
-                >634 58 67 24</nuxt-link
+              <nuxt-link :to="`tel:${globalConfig.tel}`" class="link-2">{{
+                globalConfig.tel
+              }}</nuxt-link
               ><nuxt-link
-                to="mailto:dragopsicologia@gmail.com?subject=Mail%20de%20la%20web!"
+                :to="`mailto:${globalConfig.mail}?subject=Mail%20de%20la%20web!`"
                 class="link"
-                >dragopsicologia@gmail.com</nuxt-link
+                >{{ globalConfig.mail }}</nuxt-link
               >
             </div>
           </div>
@@ -330,209 +331,12 @@
       </section>
     </div>
   </div>
-  <div class="home-about-sefction">
-    <div class="section-title-wrapper">
-      <div class="section-grey-line"></div>
-      <div class="section-colored-line-2"></div>
-      <h2 class="section-title-text">Reserva tu sesión</h2>
-      <div class="section-colored-line-2"></div>
-      <div class="section-grey-line"></div>
-    </div>
-    <div class="w-layout-grid about-grid">
-      <div class="about-wrapper">
-        <div class="w-layout-grid about-header-grid">
-          <img
-            src="~/assets/img/62ed56cc3da29eeedcfded2a_profilePicture.jpg"
-            height="120"
-            sizes="120px"
-            width="2304"
-            alt=""
-            srcset="
-              ~/assets/img/62ed56cc3da29eeedcfded2a_profilePicture-p-500.jpg   500w,
-              ~/assets/img/62ed56cc3da29eeedcfded2a_profilePicture-p-800.jpg   800w,
-              ~/assets/img/62ed56cc3da29eeedcfded2a_profilePicture-p-1080.jpg 1080w,
-              ~/assets/img/62ed56cc3da29eeedcfded2a_profilePicture.jpg        1515w
-            "
-            class="about-image"
-          />
-          <div class="about-title-wrapper"><h3>Jennifer Drago</h3></div>
-        </div>
-        <p>
-          <strong
-            >Soy Psicóloga desde hace más de diez años. Me apasiona entender la
-            complejidad de las personas y acompañarlas en el camino a su
-            bienestar. <br />‍</strong
-          ><br />Desde que tenía apenas 11 años supe que quería ser psicóloga y
-          a medida que crecía y aprendía más sobre el tema, más claro veía que
-          ese era el camino que quería para mí. <br /><br />Me licencié en
-          Psicología en 2011 por la Universidad de Barcelona y estoy acreditada
-          como Psicóloga Sanitaria. Tras la licenciatura he seguido
-          actualizándome y en formación continua para poder darte la mejor
-          atención posible. <br /><br />Estoy aquí para ayudarte. Contacta
-          conmigo y emprendamos junt@s el camino hacia tu bienestar.
-        </p>
-      </div>
-      <div class="contact-form-wrapper w-form">
-        <form
-          id="wf-form-Formulario-de-contacto"
-          name="wf-form-Formulario-de-contacto"
-          data-name="Formulario de contacto"
-          method="get"
-          class="contact-form"
-          data-wf-page-id="6352a5b547309c7e6c790f92"
-          data-wf-element-id="092ba6a6-7c27-4abc-017c-d3fd107d32c3"
-        >
-          <h3
-            id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c4-107d32a4"
-            class="form-title-text"
-          >
-            ¡Contáctame!
-          </h3>
-          <input
-            class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c6-107d32a4 w-input"
-            maxlength="256"
-            name="name-2"
-            data-name="Name 2"
-            placeholder="Nombre"
-            type="text"
-            id="name-2"
-            required
-          /><input
-            class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c7-107d32a4 w-input"
-            maxlength="256"
-            name="email-2"
-            data-name="Email 2"
-            placeholder="Email"
-            type="email"
-            id="email-2"
-            required
-          /><input
-            class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c8-107d32a4 w-input"
-            maxlength="256"
-            name="Telefono-2"
-            data-name="Telefono 2"
-            placeholder="Teléfono"
-            type="tel"
-            id="Telefono-2"
-            required
-          /><textarea
-            id="Message-2"
-            name="Message-2"
-            maxlength="5000"
-            data-name="Message 2"
-            placeholder="Tu mensaje..."
-            required
-            class="form-text-area w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c9-107d32a4 w-input"
-          ></textarea
-          ><label
-            id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ca-107d32a4"
-            class="w-checkbox"
-            ><input
-              id="checkbox-2"
-              type="checkbox"
-              name="checkbox-2"
-              data-name="Checkbox 2"
-              required
-              class="w-checkbox-input"
-            /><span class="checkbox-label w-form-label" for="checkbox-2"
-              >He leído y acepto la política de privacidad</span
-            ></label
-          ><input
-            type="submit"
-            data-wait="Enviando..."
-            id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
-            class="button-color-2 w-button"
-            value="Enviar"
-          />
-        </form>
-        <div class="success-message w-form-done">
-          <div>
-            ¡Gracias! Tu mensaje se ha enviado correctamente. <br />Te
-            contactaré lo antes posible
-          </div>
-        </div>
-        <div class="error-message w-form-fail">
-          <div>
-            Uups! Algo ha fallado enviando el formulario, por favor vuelve a
-            rellenarlo
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="pricing-overview">
-    <div class="container">
-      <div class="section-title-wrapper">
-        <div class="section-grey-line"></div>
-        <div class="section-colored-line-1"></div>
-        <h1 class="section-title-text">Tarifas</h1>
-        <div class="section-colored-line-1"></div>
-        <div class="section-grey-line"></div>
-      </div>
-      <div class="pricing-grid">
-        <div
-          id="w-node-_3474d4dd-b4aa-ff76-9e07-fc728b1ff3a1-8b1ff394"
-          class="pricing-card-three"
-        >
-          <div>
-            <div class="pricing-title-wrapper w-container">
-              <h3>Terapia individual</h3>
-              <ul role="list" class="list w-list-unstyled">
-                <li class="list-item">Online: 60€</li>
-              </ul>
-            </div>
-            <p class="pricing-card-text">
-              Las sesiones individuales tienen una duración aproximada de 50
-              minutos.
-            </p>
-          </div>
-        </div>
-        <div
-          id="w-node-f46781b5-afa5-1337-bcc2-86a7e7168337-8b1ff394"
-          class="pricing-card-three"
-        >
-          <div>
-            <div class="pricing-title-wrapper w-container">
-              <h3>Terapia Pareja</h3>
-              <ul role="list" class="list w-list-unstyled">
-                <li class="list-item-2">Online: 80€</li>
-              </ul>
-            </div>
-            <p class="pricing-card-text">
-              Sesión de terapia de pareja o grupo de no-monogamia. Tienen una
-              duración aproximada de 90 minutos.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pricing-description w-container">
-      <h3 class="heading">¿Qué incluye el precio de la sesión?</h3>
-      <p class="pricing-description">
-        Mi trabajo como Psicóloga va mucho más allá del tiempo que estamos en
-        sesión. Cada sesión requiere de trabajo previo y posterior análisis,
-        entre otras cuestiones. En el precio que se abona por sesión está
-        incluido:<br />
-      </p>
-      <ul role="list" class="list-2">
-        <li>
-          El tiempo de la sesión, 50 minutos para sesión individual o 90 minutos
-          para sesión en grupo.
-        </li>
-        <li>Preparación de tu caso entre visitas.</li>
-        <li>Tareas específicas para tu caso.</li>
-        <li>Aplicación de test psicológicos cuando sea necesario.</li>
-        <li>Comunicación entre sesiones vía email cuando sea necesario.</li>
-        <li>Supervisión de tu caso siempre que sea necesario.</li>
-        <li>Formación continuada para poder atenderte adecuadamente.</li>
-        <li>Seguro de responsabilidad civil.</li>
-      </ul>
-    </div>
-  </section>
+  <SectionsAppointment />
+  <SectionsPricing />
 </template>
 
 <script setup lang="ts">
-const { seo } = useAppConfig();
+const { seo, globalConfig } = useAppConfig();
 
 useHead({
   titleTemplate: seo.siteName,

@@ -81,19 +81,20 @@
         id="w-node-_1ec54a27-512b-b24b-81a5-293751501710-82790fa4"
         class="contact-info-text"
       >
-        <strong>Teléfono: </strong> 634 58 67 24
+        <strong>Teléfono: </strong> {{ globalConfig.tel }}
       </div>
       <div
         id="w-node-b604fd82-1fd5-8241-5cba-f261c8da9ef7-82790fa4"
         class="contact-info-text"
       >
-        <strong>Email:</strong> dragopsicologia@gmail.com
+        <strong>Email:</strong> {{ globalConfig.mail }}
       </div>
       <div
+        v-if="globalConfig.address"
         id="w-node-a5607c4e-3f8d-a6eb-651a-f019b0397e8a-82790fa4"
         class="contact-info-text"
       >
-        <strong>Dirección:</strong> Calle Narcís Monturiol 25, Cubelles.
+        <strong>Dirección:</strong> {{ globalConfig.address }}
       </div>
     </div>
   </div>
@@ -103,4 +104,6 @@
 useHead({
   title: 'Contacto',
 });
+
+const { globalConfig } = useAppConfig();
 </script>

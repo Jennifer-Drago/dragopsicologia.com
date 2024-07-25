@@ -15,6 +15,20 @@ export default defineNuxtSchema({
           icon: 'i-ph-phone',
           default: '',
         }),
+        mail: field({
+          type: 'string',
+          title: 'Email',
+          description: 'Dirección email',
+          icon: 'i-ph-envelope',
+          default: '',
+        }),
+        address: field({
+          type: 'string',
+          title: 'Dirección',
+          description: 'Dirección física',
+          icon: 'i-ph-map-pin',
+          default: '',
+        }),
       },
     }),
     seo: group({

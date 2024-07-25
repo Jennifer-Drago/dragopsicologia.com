@@ -18,12 +18,13 @@
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
-              <nuxt-link href="tel:+34634586724" class="link-2"
-                >634 58 67 24</nuxt-link
+              <nuxt-link href="tel:+34634586724" class="link-2">{{
+                globalConfig.tel
+              }}</nuxt-link
               ><nuxt-link
-                to="mailto:dragopsicologia@gmail.com?subject=Mail%20de%20la%20web!"
+                :to="`mailto:${globalConfig.mail}?subject=Mail%20de%20la%20web!`"
                 class="link"
-                >dragopsicologia@gmail.com</nuxt-link
+                >{{ globalConfig.mail }}</nuxt-link
               >
             </div>
           </div>
@@ -86,4 +87,6 @@
 useHead({
   title: 'Sobre mí',
 });
+
+const { globalConfig } = useAppConfig();
 </script>

@@ -257,14 +257,9 @@
         <div class="container-8">
           <div class="hero-wrapper-3 flex-reverse">
             <div class="hero-split-2">
-              <h3>Otros</h3>
-              <p class="margin-bottom-24px-2">
-                Si sientes malestar o que estás pasando por un mal momento
-                podemos trabajar juntxs para identificar tus
-                <strong>necesidades </strong>y buscar la manera de conseguir una
-                mayor <strong>satisfacción </strong>personal, social y laboral
-                en tu vida.
-              </p>
+              <div class="margin-bottom-24px-2">
+                <content-renderer :value="servicesExcerpts?.Otros" />
+              </div>
               <nuxt-link to="/servicios/otros" class="button-color-1 w-button"
                 >Saber más</nuxt-link
               >
@@ -494,4 +489,18 @@
 useHead({
   title: 'Servicios',
 });
+
+const { data: servicesPartials } = await useAsyncData('services', () =>
+  queryContent('servicios').where({ _partial: true }).find()
+);
+
+const servicesExcerpts = (servicesPartials.value || []).reduce(
+  (acc, curr, index) => ({
+    ...acc,
+    ...{
+      [curr.title || index]: curr,
+    },
+  }),
+  {}
+);
 </script>

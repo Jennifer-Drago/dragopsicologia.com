@@ -23,4 +23,9 @@ export default defineNuxtConfig({
   studio: {
     enabled: true,
   },
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
+  },
 });
