@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/content', '@nuxthq/studio'],
+  modules: ['@nuxt/content', '@nuxthq/studio', '@nuxt/fonts'],
   studio: {
     enabled: true,
   },
@@ -27,5 +27,10 @@ export default defineNuxtConfig({
     markdown: {
       anchorLinks: false,
     },
+  },
+  fonts: {
+    families: [
+      { name: 'Poppins', provider: 'google', weights: [400, 600, 700] },
+    ],
   },
 });

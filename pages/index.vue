@@ -9,14 +9,14 @@
           <div class="hero-title-block">
             <div class="hero-title-wrapper">
               <h1 class="hero-title-text">
-                {{ content.title1 }}&nbsp;<span class="colored-text">{{
-                  content.title2
+                {{ homeContent.title1 }}&nbsp;<span class="colored-text">{{
+                  homeContent.title2
                 }}</span>
-                <br />{{ content.title3 }}
+                <br />{{ homeContent.title3 }}
               </h1>
             </div>
             <nuxt-link to="/contacto" class="button-color-3 w-button">{{
-              content.cta
+              homeContent.cta
             }}</nuxt-link>
           </div>
           <div class="hero-footer">
@@ -332,7 +332,7 @@
     </div>
   </div>
   <SectionsAppointment />
-  <SectionsPricing />
+  <SectionsPricing :title="pricingPage?.title" />
 </template>
 
 <script setup lang="ts">
@@ -342,7 +342,11 @@ useHead({
   titleTemplate: seo.siteName,
 });
 
-const { data: content } = await useAsyncData('home', () =>
+const { data: homeContent } = await useAsyncData('home', () =>
   queryContent('/').findOne()
+);
+
+const { data: pricingPage } = useAsyncData('pricingPage', () =>
+  queryContent('/tarifas').findOne()
 );
 </script>

@@ -4,7 +4,7 @@
       <div class="section-title-wrapper">
         <div class="section-grey-line"></div>
         <div class="section-colored-line-1"></div>
-        <h1 class="section-title-text">Tarifas</h1>
+        <h1 class="section-title-text">{{ title }}</h1>
         <div class="section-colored-line-1"></div>
         <div class="section-grey-line"></div>
       </div>
@@ -46,28 +46,15 @@
       </div>
     </div>
     <div class="pricing-description w-container">
-      <h3 class="heading">¿Qué incluye el precio de la sesión?</h3>
-      <p class="pricing-description">
-        Mi trabajo como Psicóloga va mucho más allá del tiempo que estamos en
-        sesión. Cada sesión requiere de trabajo previo y posterior análisis,
-        entre otras cuestiones. En el precio que se abona por sesión está
-        incluido:<br />
-      </p>
-      <ul role="list" class="list-2">
-        <li>
-          El tiempo de la sesión, 50 minutos para sesión individual o 90 minutos
-          para sesión en grupo.
-        </li>
-        <li>Preparación de tu caso entre visitas.</li>
-        <li>Tareas específicas para tu caso.</li>
-        <li>Aplicación de test psicológicos cuando sea necesario.</li>
-        <li>Comunicación entre sesiones vía email cuando sea necesario.</li>
-        <li>Supervisión de tu caso siempre que sea necesario.</li>
-        <li>Formación continuada para poder atenderte adecuadamente.</li>
-        <li>Seguro de responsabilidad civil.</li>
-      </ul>
+      <ContentRenderer :value="pricingSection || {}" />
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+withDefaults(defineProps<{ title: string }>(), { title: 'Tarifas' });
+
+const { data: pricingSection } = useAsyncData('pricingSection', () =>
+  queryContent('sections', 'tarifas').findOne()
+);
+</script>

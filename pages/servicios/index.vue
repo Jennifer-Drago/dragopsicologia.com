@@ -3,7 +3,7 @@
     <div class="section-title-wrapper">
       <div class="section-grey-line"></div>
       <div class="section-colored-line-1"></div>
-      <h2 class="section-title-text">Servicios</h2>
+      <h2 class="section-title-text">{{ content?.title }}</h2>
       <div class="section-colored-line-1"></div>
       <div class="section-grey-line"></div>
     </div>
@@ -490,6 +490,9 @@ useHead({
   title: 'Servicios',
 });
 
+const { data: content } = await useAsyncData('servicePage', () =>
+  queryContent('/servicios').findOne()
+);
 const { data: servicesPartials } = await useAsyncData('services', () =>
   queryContent('servicios').where({ _partial: true }).find()
 );

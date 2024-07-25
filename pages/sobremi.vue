@@ -9,12 +9,13 @@
           <div class="hero-title-block">
             <div class="hero-title-wrapper">
               <h1 class="hero-title-text">
-                ¡Hola! <span class="colored-text">Soy Jennifer Drago</span>
+                {{ content.heroTitle1 }}
+                <span class="colored-text">{{ content.heorTitle2 }}</span>
               </h1>
             </div>
-            <nuxt-link to="/contacto" class="button-color-3 w-button"
-              >Contacta conmigo</nuxt-link
-            >
+            <nuxt-link to="/contacto" class="button-color-3 w-button">{{
+              content.cta
+            }}</nuxt-link>
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
@@ -40,7 +41,7 @@
     <div class="section-title-wrapper">
       <div class="section-grey-line"></div>
       <div class="section-colored-line-2"></div>
-      <h1 class="section-title-text">Sobre mí</h1>
+      <h1 class="section-title-text">{{ content?.title }}</h1>
       <div class="section-colored-line-2"></div>
       <div class="section-grey-line"></div>
     </div>
@@ -64,20 +65,9 @@
         />
       </div>
       <div class="w-richtext">
-        <p>
-          <strong
-            >Soy Psicóloga desde hace más de diez años. Me apasiona entender la
-            complejidad de las personas y acompañarlas en el camino a su
-            bienestar. <br />‍</strong
-          ><br />Desde que tenía apenas 11 años supe que quería ser psicóloga y
-          a medida que crecía y aprendía más sobre el tema, más claro veía que
-          ese era el camino que quería para mí. <br /><br />Me licencié en
-          Psicología en 2011 por la Universidad de Barcelona y estoy acreditada
-          como Psicóloga Sanitaria. Tras la licenciatura he seguido
-          actualizándome y en formación continua para poder darte la mejor
-          atención posible. <br /><br />Estoy aquí para ayudarte. Contacta
-          conmigo y emprendamos junt@s el camino hacia tu bienestar.
-        </p>
+        <div v-if="content">
+          <ContentRenderer :value="content" />
+        </div>
       </div>
     </div>
   </div>
@@ -89,4 +79,8 @@ useHead({
 });
 
 const { globalConfig } = useAppConfig();
+
+const { data: content } = await useAsyncData('sobremi', () =>
+  queryContent('/sobremi').findOne()
+);
 </script>
