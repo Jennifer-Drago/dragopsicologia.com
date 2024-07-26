@@ -13,14 +13,14 @@
           <div class="hero-wrapper">
             <div class="hero-split">
               <img
-                src="~/assets/img/635107093188a332f9a356f9_Ansiedad.png"
+                src="/img/635107093188a332f9a356f9_Ansiedad.png"
                 loading="lazy"
                 sizes="(max-width: 767px) 94vw, (max-width: 991px) 687.9921875px, 413.9921875px"
                 srcset="
-                  ~/assets/img/635107093188a332f9a356f9_Ansiedad-p-500.png   500w,
-                  ~/assets/img/635107093188a332f9a356f9_Ansiedad-p-800.png   800w,
-                  ~/assets/img/635107093188a332f9a356f9_Ansiedad-p-1080.png 1080w,
-                  ~/assets/img/635107093188a332f9a356f9_Ansiedad.png        1222w
+                  /img/635107093188a332f9a356f9_Ansiedad-p-500.png   500w,
+                  /img/635107093188a332f9a356f9_Ansiedad-p-800.png   800w,
+                  /img/635107093188a332f9a356f9_Ansiedad-p-1080.png 1080w,
+                  /img/635107093188a332f9a356f9_Ansiedad.png        1222w
                 "
                 alt=""
                 class="shadow-two"

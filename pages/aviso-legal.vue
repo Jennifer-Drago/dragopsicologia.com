@@ -8,7 +8,7 @@
       <div class="section-grey-line"></div>
     </div>
     <div class="rich-text-block-3 w-richtext">
-      <ContentRendererMarkdown :value="content || {}" :data="data" />
+      <ContentRenderer :value="content || {}" :data="data" />
     </div>
   </div>
 </template>
