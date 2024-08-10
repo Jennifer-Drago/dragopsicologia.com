@@ -1,5 +1,5 @@
 <template>
-  <SectionsPricing />
+  <SectionsPricing :is-page="true" />
 </template>
 
 <script setup lang="ts">
