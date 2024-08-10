@@ -12,10 +12,63 @@ export default defineNuxtConfig({
           name: 'robots',
           content: 'noindex',
         },
+        {
+          name: 'msapplication-TileColor',
+          content: '#da532c',
+        },
+        {
+          name: 'theme-color',
+          content: '#ffffff',
+        },
+      ],
+      link: [
+        {
+          rel: 'manifest',
+          href: '/site.webmanifest',
+        },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/img/favicon/apple-touch-icon.png',
+        },
+        {
+          rel: 'icon',
+          type: 'icon',
+          sizes: '32x32',
+          href: '/img/favicon/favicon-32x32.png',
+        },
+        {
+          rel: 'icon',
+          type: 'icon',
+          sizes: '16x16',
+          href: '/img/favicon/favicon-16x16.png',
+        },
       ],
       htmlAttrs: {
         lang: 'es',
       },
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(
+            {
+              '@context': 'https://schema.org',
+              '@type': 'ProfessionalService',
+              name: 'Drago Psicología',
+              image: 'https://www.dragopsicologia.com/img/cover.png',
+              url: 'https://www.dragopsicologia.com/',
+              telephone: '634 58 67 24',
+              address: {
+                '@type': 'PostalAddress',
+                postalCode: '08880',
+                addressCountry: 'ES',
+              },
+            },
+            null,
+            ''
+          ),
+        },
+      ],
     },
   },
 

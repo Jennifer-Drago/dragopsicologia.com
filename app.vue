@@ -14,5 +14,7 @@ useHead({ titleTemplate: `%s - ${seo?.siteName}` });
 useSeoMeta({
   ogSiteName: seo.siteName,
   twitterCard: 'summary_large_image',
+  ogImage: '/img/cover.png',
+  twitterImage: '/img/cover.png',
 });
 </script>

@@ -49,6 +49,10 @@
 <script setup lang="ts">
 const { seo, globalConfig } = useAppConfig();
 
+definePageMeta({
+  title: 'Home',
+});
+
 useHead({
   titleTemplate: seo.siteName,
 });
