@@ -35,7 +35,9 @@
                 angustiante. Si estás cansad@ de vivir con ansiedad contacta
                 conmigo.
               </p>
-              <nuxt-link to="/estres-y-ansiedad" class="button-color-3 w-button"
+              <nuxt-link
+                to="/servicios/estres-y-ansiedad"
+                class="button-color-3 w-button"
                 >Saber más</nuxt-link
               >
             </div>
