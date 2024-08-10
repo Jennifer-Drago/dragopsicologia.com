@@ -102,8 +102,8 @@ const { globalConfig } = useAppConfig();
 
 withDefaults(
   defineProps<{
-    title: string;
-    subtitle: string;
+    title?: string;
+    subtitle?: string;
   }>(),
   {
     title: '¡Contacta conmigo!',

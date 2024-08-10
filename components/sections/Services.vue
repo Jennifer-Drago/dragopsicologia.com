@@ -27,19 +27,10 @@
               />
             </div>
             <div class="hero-split">
-              <h3 class="heading-9">Ansiedad y estrés</h3>
-              <p class="margin-bottom-24px">
-                Esa sensación de tener demasiadas cosas en la cabeza, ataques de
-                ansiedad, Trastorno obsesivo compulsivo (TOC), Agorafobia...<br />Aunque
-                es una emoción normal, la ansiedad puede llegar a ser muy
-                angustiante. Si estás cansad@ de vivir con ansiedad contacta
-                conmigo.
-              </p>
-              <nuxt-link
-                to="/servicios/estres-y-ansiedad"
-                class="button-color-3 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Estres Y Ansiedad']"
+                link="/servicios/estres-y-ansiedad"
+              />
             </div>
           </div>
         </div>
@@ -48,20 +39,10 @@
         <div class="container-7">
           <div class="hero-wrapper flex-reverse">
             <div class="hero-split">
-              <h3>Depresión</h3>
-              <p class="margin-bottom-24px">
-                Sentir que estás cargando con una pesada mochila que parece
-                invisible a los ojos de la gente. Y, por si fuera poco, un gran
-                sentimiento de culpa que lo dificulta todo aún más.<br />Encuentra
-                el espacio donde <strong>sentirte comprendidx </strong>y
-                construir el camino para volver a
-                <strong>sentirte bien</strong> en tu día a día.
-              </p>
-              <nuxt-link
-                to="/servicios/depresion"
-                class="button-color-1 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Depresion']"
+                link="/servicios/depresion"
+              />
             </div>
             <div class="hero-split">
               <img
@@ -98,18 +79,10 @@
               />
             </div>
             <div class="hero-split-2">
-              <h3>Psiconutrición</h3>
-              <p class="margin-bottom-24px-2">
-                ¿Sientes que estás en guerra con tu alimentación? A través de la
-                Psiconutrición podemos trabajar de una manera
-                <strong>positiva </strong>nuestra relación con la comida y con
-                <strong>nosotras </strong>mismas.
-              </p>
-              <nuxt-link
-                to="/servicios/psiconutricion"
-                class="button-color-2 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Psiconutricion']"
+                link="/servicios/psiconutricion"
+              />
             </div>
           </div>
         </div>
@@ -118,21 +91,10 @@
         <div class="container-8">
           <div class="hero-wrapper-3 flex-reverse">
             <div class="hero-split-2">
-              <h3>Apegos y dependencia emocional</h3>
-              <p class="margin-bottom-24px-2">
-                ¿Sientes que tienes &quot;mala suerte en el amor&quot;?
-                ¿relación tras relación se repite el mismo patrón y acabas
-                sufriendo por amor? ¿Sientes que tu vida gira en torno a tu
-                pareja y que sin ella casi nada tiene sentido?
-                <br />Trabajemos juntxs para conseguir un
-                <strong>apego seguro</strong> y construir tu camino para
-                encontrar un <strong>amor sano</strong>.
-              </p>
-              <nuxt-link
-                to="/servicios/dependencia-emocional"
-                class="button-color-3 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Dependencia Emocional']"
+                link="/servicios/dependencia-emocional"
+              />
             </div>
             <div class="hero-split-2">
               <img
@@ -169,19 +131,10 @@
               />
             </div>
             <div class="hero-split-2">
-              <h3 class="heading-10">Sexología</h3>
-              <p class="margin-bottom-24px-2">
-                El sexo es mucho más que tener relaciones sexuales con otra
-                persona. La sexualidad debe ser una fuente de
-                <strong>placer </strong>y <strong>disfrute</strong>, cuando esto
-                no es así es importante trabajar para volver a disfrutar de la
-                sexualidad de una manera <strong>plena</strong>.
-              </p>
-              <nuxt-link
-                to="/servicios/sexologia-problemas-sexuales"
-                class="button-color-1 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Sexologia Problemas Sexuales']"
+                link="/servicios/sexologia-problemas-sexuales"
+              />
             </div>
           </div>
         </div>
@@ -190,18 +143,10 @@
         <div class="container-8">
           <div class="hero-wrapper-3 flex-reverse">
             <div class="hero-split-2">
-              <h3>Psicología feminista</h3>
-              <p class="margin-bottom-24px-2">
-                Independientemente de tu sexo, género y orientación sexual, la
-                perspectiva feminista en terapia puede ayudarte a tener una
-                mayor <strong>comprensión </strong>de tu malestar y darte más
-                <strong>herramientas </strong>para romper con él.
-              </p>
-              <nuxt-link
-                to="/servicios/psicologa-feminista"
-                class="button-color-2 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Psicologa Feminista']"
+                link="/servicios/psicologa-feminista"
+              />
             </div>
             <div class="hero-split-2">
               <img
@@ -239,18 +184,10 @@
               />
             </div>
             <div class="hero-split-2">
-              <h3>Poliamor y no monogamias</h3>
-              <p class="margin-bottom-24px-2">
-                ¿Tú pareja te ha propuesto abrir la relación y no sabes si es
-                algo para ti? ¿Sientes que necesitas ayuda para gestionar una
-                relación poliamorosa? ¿Necesitas un espacio donde poder hablar
-                tus inquietudes, miedos y celos?
-              </p>
-              <nuxt-link
-                to="/servicios/poliamor-y-no-monogamia"
-                class="button-color-3 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.['Poliamor Y No Monogamia']"
+                link="/servicios/poliamor-y-no-monogamia"
+              />
             </div>
           </div>
         </div>
@@ -259,12 +196,10 @@
         <div class="container-8">
           <div class="hero-wrapper-3 flex-reverse">
             <div class="hero-split-2">
-              <div class="margin-bottom-24px-2">
-                <content-renderer :value="servicesExcerpts?.Otros" />
-              </div>
-              <nuxt-link to="/servicios/otros" class="button-color-1 w-button"
-                >Saber más</nuxt-link
-              >
+              <sections-services-item
+                :content="servicesExcerpts?.Otros"
+                link="/servicios/otros"
+              />
             </div>
             <div class="hero-split-2">
               <img
@@ -289,10 +224,13 @@
 </template>
 
 <script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content';
+
 const { data: content } = await useAsyncData('servicePage', () =>
   queryContent('/servicios').findOne()
 );
-const { data: servicesPartials } = await useAsyncData('services', () =>
+
+const { data: servicesPartials } = await useAsyncData('servicesPartials', () =>
   queryContent('servicios').where({ _partial: true }).find()
 );
 
@@ -303,6 +241,6 @@ const servicesExcerpts = (servicesPartials.value || []).reduce(
       [curr.title || index]: curr,
     },
   }),
-  {}
+  {} as { [k: string]: ParsedContent }
 );
 </script>
