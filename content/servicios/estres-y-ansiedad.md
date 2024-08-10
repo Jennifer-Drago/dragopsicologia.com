@@ -3,7 +3,7 @@ title: ¿Cansado de vivir con ansiedad?
 metaTitle: Estres y Ansiedad
 ---
 
-::post-hero{ :title="title" }
+::post-hero{:title="title"}
 A veces sentimos que tenemos **mil cosas en la cabeza**. Demasiados asuntos de los que estar pendiente y esa sensación casi constante de que si nos despistamos todo se puede **desmoronar**.
 
 La ansiedad también puede aparecer de manera repentina. En un momento aparentemente tranquilo empiezas a sentir cierta **tensión** en el cuerpo, presión en el pecho e incluso llegas a sentir que aumentan tus **pulsaciones**, sudor frío o la sensación de que estás **perdiendo el control**.
