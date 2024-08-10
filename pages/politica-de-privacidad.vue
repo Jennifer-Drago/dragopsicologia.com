@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-const { data: content } = await useAsyncData('politicaDePrivadidad', () =>
-  queryContent('/politica-de-privadidad').findOne()
+const { data: content } = await useAsyncData('politicaDePrivacidad', () =>
+  queryContent('/politica-de-privacidad').findOne()
 );
 
 useHead({
