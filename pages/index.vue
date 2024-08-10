@@ -53,11 +53,15 @@ definePageMeta({
   title: 'Home',
 });
 
+const { data: homeContent } = await useAsyncData('home', () =>
+  queryContent('/').findOne()
+);
+
 useHead({
   titleTemplate: seo.siteName,
 });
 
-const { data: homeContent } = await useAsyncData('home', () =>
-  queryContent('/').findOne()
-);
+useSeoMeta({
+  description: homeContent.value?.description || '',
+});
 </script>

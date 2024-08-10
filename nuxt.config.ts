@@ -22,6 +22,7 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        { rel: 'canonical', href: 'https://www.dragopsicologia.com/' },
         {
           rel: 'manifest',
           href: '/site.webmanifest',
