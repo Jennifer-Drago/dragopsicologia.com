@@ -14,14 +14,16 @@
       >
         <form
           id="email-form"
-          name="email-form"
-          netlify
-          data-name="Email Form"
+          name="contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
           method="get"
           class="contact-form"
           data-wf-page-id="6352a5b547309c0182790fa4"
           data-wf-element-id="2afda74d-78cb-04bc-e6b1-b15c2611377c"
         >
+          <input type="hidden" name="form-name" value="contact-form" />
+          <input type="hidden" name="bot-field" />
           <h3
             id="w-node-_2afda74d-78cb-04bc-e6b1-b15c2611377d-82790fa4"
             class="form-title-text"
