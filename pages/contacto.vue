@@ -15,6 +15,7 @@
         <form
           id="email-form"
           name="email-form"
+          netlify
           data-name="Email Form"
           method="get"
           class="contact-form"
