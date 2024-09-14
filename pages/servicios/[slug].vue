@@ -7,7 +7,7 @@
           id="w-node-fb068789-0a1c-6dbe-62f8-c6183cbaef0f-44790fa8"
           class="div-block-2"
         >
-          <ServicesSmallForm />
+          <ServicesTheForm button-variant="green" />
         </div>
         <div
           id="w-node-fb068789-0a1c-6dbe-62f8-c6183cbaef23-44790fa8"
