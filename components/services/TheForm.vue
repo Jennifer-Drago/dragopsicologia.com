@@ -15,6 +15,7 @@
       id="wf-form-Formulario-de-contacto"
       method="get"
       class="contact-form"
+      @submit="handleSubmit"
     >
       <input type="hidden" name="form-name" value="contact-form" />
       <input type="hidden" name="bot-field" />
@@ -54,7 +55,12 @@
         /><span class="checkbox-label w-form-label" for="checkbox"
           >He leído y acepto la política de privacidad</span
         ></label
-      ><input
+      >
+      <NuxtTurnstile
+        v-model="token"
+        :options="{ action: 'vue', language: 'es' }"
+      />
+      <input
         type="submit"
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
         class="w-button"
@@ -95,4 +101,38 @@ withDefaults(
     buttonVariant: 'yellow',
   }
 );
+
+const token = ref();
+
+const validationResponse = ref();
+
+async function validateUser() {
+  validationResponse.value = await $fetch('/api/validate', {
+    method: 'POST',
+    body: {
+      token: token.value,
+    },
+  });
+}
+
+const handleSubmit = async (event: SubmitEvent) => {
+  event.preventDefault();
+
+  const myForm = event.target as HTMLFormElement;
+  const formData = new FormData(myForm);
+
+  await validateUser().then(() => {
+    if (validationResponse.value?.success) {
+      return fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+        .then(() => console.log('Form successfully submitted'))
+        .catch((error) => alert(error));
+    } else {
+      alert('No se ha podido validar el formulario');
+    }
+  });
+};
 </script>

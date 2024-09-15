@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    turnstile: {
+      secretKey: process.env.TURNSTILE_SECRET_KEY,
+    },
+  },
+
   app: {
     head: {
       viewport: 'width=device-width, initial-scale=1',
@@ -73,7 +79,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/content', '@nuxthq/studio', '@nuxt/fonts'],
+  modules: [
+    '@nuxt/content',
+    '@nuxthq/studio',
+    '@nuxt/fonts',
+    '@nuxtjs/turnstile',
+    '@nuxt/scripts',
+  ],
   studio: {
     enabled: true,
   },
@@ -86,5 +98,8 @@ export default defineNuxtConfig({
     families: [
       { name: 'Poppins', provider: 'google', weights: [400, 600, 700] },
     ],
+  },
+  turnstile: {
+    siteKey: process.env.TURNSTILE_SITE_KEY,
   },
 });
