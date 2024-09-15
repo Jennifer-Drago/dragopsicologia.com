@@ -15,7 +15,7 @@
       id="wf-form-Formulario-de-contacto"
       method="get"
       class="contact-form"
-      @submit="handleSubmit"
+      @submit="(event) => {handleSubmit(event as SubmitEvent)}"
     >
       <input type="hidden" name="form-name" value="contact-form" />
       <input type="hidden" name="bot-field" />
@@ -87,8 +87,6 @@
 </template>
 
 <script setup lang="ts">
-const { globalConfig } = useAppConfig();
-
 withDefaults(
   defineProps<{
     title?: string;
