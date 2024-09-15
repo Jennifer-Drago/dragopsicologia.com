@@ -19,10 +19,7 @@
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
-              <nuxt-link href="tel:+34634586724" class="link-2">{{
-                globalConfig.tel
-              }}</nuxt-link
-              ><nuxt-link
+              <WhatsappNumberLink /><nuxt-link
                 :to="`mailto:${globalConfig.mail}?subject=Mail%20de%20la%20web!`"
                 class="link"
                 >{{ globalConfig.mail }}</nuxt-link

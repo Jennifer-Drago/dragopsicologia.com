@@ -7,7 +7,7 @@
       <div class="section-colored-line-2"></div>
       <div class="section-grey-line"></div>
     </div>
-    <div class="w-layout-grid contact-grid">
+    <div class="contact-grid">
       <div
         id="w-node-_2afda74d-78cb-04bc-e6b1-b15c2611377b-82790fa4"
         class="contact-form-wrapper w-form"
@@ -20,7 +20,8 @@
         id="w-node-_1ec54a27-512b-b24b-81a5-293751501710-82790fa4"
         class="contact-info-text"
       >
-        <strong>Teléfono: </strong> {{ globalConfig.tel }}
+        <strong>Whatsapp: </strong>
+        <WhatsappNumberLink />
       </div>
       <div
         id="w-node-b604fd82-1fd5-8241-5cba-f261c8da9ef7-82790fa4"

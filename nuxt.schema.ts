@@ -31,8 +31,8 @@ export default defineNuxtSchema({
       fields: {
         tel: field({
           type: 'string',
-          title: 'Teléfono',
-          description: 'Teléfono de contacto',
+          title: 'Teléfono/Whatsapp',
+          description: 'Teléfono de contacto (Whatsapp)',
           icon: 'i-ph-phone',
           default: '',
         }),

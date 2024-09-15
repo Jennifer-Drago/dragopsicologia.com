@@ -16,15 +16,12 @@
               </h1>
             </div>
             <nuxt-link to="/contacto" class="button-color-3 w-button">{{
-              homeContent.cta
+              homeContent?.cta
             }}</nuxt-link>
           </div>
           <div class="hero-footer">
             <div class="hero-contact-details-grid">
-              <nuxt-link :to="`tel:${globalConfig.tel}`" class="link-2">{{
-                globalConfig.tel
-              }}</nuxt-link
-              ><nuxt-link
+              <WhatsappNumberLink /><nuxt-link
                 :to="`mailto:${globalConfig.mail}?subject=Mail%20de%20la%20web!`"
                 class="link"
                 >{{ globalConfig.mail }}</nuxt-link
