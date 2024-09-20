@@ -10,6 +10,9 @@
   <div class="contact-form-wrapper w-form">
     <form
       name="contact-form"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
       id="wf-form-Formulario-de-contacto"
       method="post"
       class="contact-form"
@@ -54,6 +57,7 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
+      <div data-netlify-recaptcha="true"></div>
       <input
         type="submit"
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
