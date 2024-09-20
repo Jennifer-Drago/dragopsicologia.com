@@ -10,11 +10,11 @@
   <div class="contact-form-wrapper w-form">
     <form
       name="contact-form"
+      method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       id="wf-form-Formulario-de-contacto"
-      method="post"
       class="contact-form"
       action="/gracias"
     >
