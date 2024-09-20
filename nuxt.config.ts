@@ -15,10 +15,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         {
-          name: 'robots',
-          content: 'noindex',
-        },
-        {
           name: 'msapplication-TileColor',
           content: '#da532c',
         },
