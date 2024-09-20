@@ -15,6 +15,7 @@
       id="wf-form-Formulario-de-contacto"
       method="get"
       class="contact-form"
+      action="/gracias"
     >
       <input type="hidden" name="form-name" value="contact-form" />
       <input type="hidden" name="bot-field" />
