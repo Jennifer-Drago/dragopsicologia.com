@@ -11,7 +11,7 @@
     <form
       name="contact-form"
       id="wf-form-Formulario-de-contacto"
-      method="get"
+      method="post"
       class="contact-form"
       action="/gracias"
     >
