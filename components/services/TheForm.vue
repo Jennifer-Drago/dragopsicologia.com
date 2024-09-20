@@ -13,12 +13,10 @@
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
       id="wf-form-Formulario-de-contacto"
       class="contact-form"
       action="/gracias"
     >
-      <input type="hidden" name="form-name" value="contact-form" />
       <input type="hidden" name="bot-field" />
       <input
         class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c6-107d32a4 w-input"
@@ -57,7 +55,6 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
-      <div data-netlify-recaptcha="true"></div>
       <input
         type="submit"
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
