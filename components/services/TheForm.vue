@@ -10,8 +10,6 @@
   <div class="contact-form-wrapper w-form">
     <form
       name="contact-form"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       id="wf-form-Formulario-de-contacto"
       method="get"
       class="contact-form"
