@@ -13,10 +13,11 @@
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      id="wf-form-Formulario-de-contacto"
       class="contact-form"
       action="/gracias"
+      @submit.prevent="$event => handleSubmit($event as SubmitEvent)"
     >
+      <input type="hidden" name="form-name" value="contact-form" />
       <input type="hidden" name="bot-field" />
       <input
         class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c6-107d32a4 w-input"
@@ -108,24 +109,21 @@ withDefaults(
 //   });
 // }
 
-// const handleSubmit = async (event: SubmitEvent) => {
-//   event.preventDefault();
+const handleSubmit = async (event: SubmitEvent) => {
+  const myForm = event.target as HTMLFormElement;
+  const formData = new FormData(myForm);
 
-//   const myForm = event.target as HTMLFormElement;
-//   const formData = new FormData(myForm);
-
-//   await validateUser().then(() => {
-//     if (validationResponse.value?.success) {
-//       return fetch('/', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//         body: new URLSearchParams(formData as any).toString(),
-//       })
-//         .then(() => console.log('Form successfully submitted'))
-//         .catch((error) => alert(error));
-//     } else {
-//       alert('No se ha podido validar el formulario');
-//     }
-//   });
-// };
+  return fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData as any).toString(),
+  })
+    .then(() => {
+      console.log('Form successfully submitted');
+      navigateTo('/gracias');
+    })
+    .catch((error) => {
+      console.error('Error submitting form:', error);
+    });
+};
 </script>
