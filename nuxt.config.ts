@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
-    turnstile: {
-      secretKey: process.env.TURNSTILE_SECRET_KEY,
+    brevo: {
+      apiKey: process.env.BREVO_API_KEY,
+      smtp: process.env.SMTP_PASSWORD,
+      user: process.env.SMTP_USER,
     },
   },
 
@@ -75,16 +77,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxt/content',
-    '@nuxthq/studio',
-    '@nuxt/fonts',
-    '@nuxtjs/turnstile',
-    '@nuxt/scripts',
-  ],
-  studio: {
-    enabled: true,
-  },
+  modules: ['@nuxt/content', '@nuxthq/studio', '@nuxt/fonts', '@nuxt/scripts'],
   content: {
     markdown: {
       anchorLinks: false,
@@ -95,7 +88,10 @@ export default defineNuxtConfig({
       { name: 'Poppins', provider: 'google', weights: [400, 600, 700] },
     ],
   },
-  turnstile: {
-    siteKey: process.env.TURNSTILE_SITE_KEY,
+  nitro: {
+    prerender: {
+      // https://nuxt.com/deploy/cloudflare#route-matching
+      autoSubfolderIndex: false,
+    },
   },
 });
