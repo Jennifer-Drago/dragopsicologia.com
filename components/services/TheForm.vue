@@ -10,8 +10,8 @@
   <div class="contact-form-wrapper w-form">
     <form
       class="contact-form"
-      @submit.prevent="onSubmit"
       enctype="multipart/form-data"
+      @submit.prevent="onSubmit"
     >
       <input
         id="name"
