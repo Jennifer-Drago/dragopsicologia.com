@@ -9443,6 +9443,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nitro-cloudflare-dev@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "nitro-cloudflare-dev@npm:0.1.6"
+  dependencies:
+    consola: "npm:^3.2.3"
+    mlly: "npm:^1.7.1"
+    pkg-types: "npm:^1.1.3"
+  checksum: 10c0/128d88a126f9d03ea4d173eef9f4fbbbf7d9e81eb536370cd4dc4476085653ab8bc4fb691025b456410895080dc788c6baea0e8080c2b05545e7549fe7b31227
+  languageName: node
+  linkType: hard
+
 "nitropack@npm:^2.9.7":
   version: 2.9.7
   resolution: "nitropack@npm:2.9.7"
@@ -9755,6 +9766,7 @@ __metadata:
     "@vueuse/core": "npm:^10.11.0"
     eslint: "npm:^9.11.0"
     husky: "npm:^9.1.6"
+    nitro-cloudflare-dev: "npm:^0.1.6"
     nodemailer: "npm:^6.9.15"
     nuxt: "npm:3.13.1"
     sib-api-v3-typescript: "npm:^2.2.2"
@@ -10310,7 +10322,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-types@npm:^1.0.3, pkg-types@npm:^1.1.1, pkg-types@npm:^1.2.0":
+"pkg-types@npm:^1.0.3, pkg-types@npm:^1.1.1, pkg-types@npm:^1.1.3, pkg-types@npm:^1.2.0":
   version: 1.2.0
   resolution: "pkg-types@npm:1.2.0"
   dependencies:

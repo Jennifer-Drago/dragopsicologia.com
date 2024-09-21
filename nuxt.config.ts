@@ -83,6 +83,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/scripts',
     '@nuxt/eslint',
+    // experimental
+    'nitro-cloudflare-dev',
   ],
   content: {
     markdown: {
@@ -95,6 +97,7 @@ export default defineNuxtConfig({
     ],
   },
   nitro: {
+    preset: 'cloudflare-pages',
     prerender: {
       // https://nuxt.com/deploy/cloudflare#route-matching
       autoSubfolderIndex: false,

@@ -8,7 +8,11 @@
     {{ title }}
   </h2>
   <div class="contact-form-wrapper w-form">
-    <form method="POST" class="contact-form" action="/api/submit">
+    <form
+      class="contact-form"
+      @submit.prevent="onSubmit"
+      enctype="multipart/form-data"
+    >
       <input
         id="name"
         class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c6-107d32a4 w-input"
@@ -17,7 +21,7 @@
         placeholder="Nombre"
         type="text"
         required
-      ><input
+      /><input
         id="email"
         class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c7-107d32a4 w-input"
         maxlength="256"
@@ -25,7 +29,7 @@
         placeholder="Email"
         type="email"
         required
-      ><textarea
+      /><textarea
         id="Message"
         name="Message"
         maxlength="5000"
@@ -41,7 +45,7 @@
           name="checkbox"
           required
           class="w-checkbox-input"
-        ><span class="checkbox-label w-form-label" for="checkbox"
+        /><span class="checkbox-label w-form-label" for="checkbox"
           >He leído y acepto la política de privacidad</span
         ></label
       >
@@ -54,11 +58,11 @@
           'button-color-3': buttonVariant === 'green',
         }"
         value="Enviar"
-      >
+      />
     </form>
     <div class="success-message w-form-done">
       <div>
-        ¡Gracias! Tu mensaje se ha enviado correctamente. <br >Te contactaré lo
+        ¡Gracias! Tu mensaje se ha enviado correctamente. <br />Te contactaré lo
         antes posible
       </div>
     </div>
@@ -84,4 +88,21 @@ withDefaults(
     buttonVariant: 'yellow',
   }
 );
+
+const onSubmit = async (e: Event) => {
+  const form = e.target as HTMLFormElement;
+
+  const formData = new FormData(form);
+
+  try {
+    const { data } = useFetch('/api/submit', {
+      method: 'POST',
+      body: formData,
+    });
+
+    console.log({ data });
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>

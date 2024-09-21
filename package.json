@@ -27,6 +27,7 @@
     "@types/nodemailer": "^6.4.16",
     "eslint": "^9.11.0",
     "husky": "^9.1.6",
+    "nitro-cloudflare-dev": "^0.1.6",
     "typescript": "^5.6.2",
     "wrangler": "^3.78.7"
   },
