@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const body = await readBody(event);
 
-  let transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: 'smtp-relay.brevo.com',
     port: 587,
     secure: false, // true for 465, false for other ports
@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   });
 
   // send mail with defined transport object
-  let info = await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: '"Mail" dragopsicologia@gmail.com', // sender address
     to: 'dragopsicologia@gmail.com', // list of receivers
     subject: 'Hello ✔✔', // Subject line

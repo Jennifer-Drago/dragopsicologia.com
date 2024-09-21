@@ -1,9 +1,11 @@
 <template>
-  <ContentRenderer
-    :value="content || {}"
-    :components="{ PostHero, PostSplitSection }"
-  />
-  <SectionsAppointment />
+  <div>
+    <ContentRenderer
+      :value="content || {}"
+      :components="{ PostHero, PostSplitSection }"
+    />
+    <SectionsAppointment />
+  </div>
 </template>
 
 <script setup lang="ts">

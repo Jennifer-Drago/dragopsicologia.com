@@ -77,7 +77,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/content', '@nuxthq/studio', '@nuxt/fonts', '@nuxt/scripts'],
+  modules: [
+    '@nuxt/content',
+    '@nuxthq/studio',
+    '@nuxt/fonts',
+    '@nuxt/scripts',
+    '@nuxt/eslint',
+  ],
   content: {
     markdown: {
       anchorLinks: false,

@@ -1,11 +1,11 @@
 <template>
   <div class="div-block-5">
     <div class="section-title-wrapper">
-      <div class="section-grey-line"></div>
-      <div class="section-colored-line-1"></div>
+      <div class="section-grey-line"/>
+      <div class="section-colored-line-1"/>
       <h2 class="section-title-text">{{ content?.title }}</h2>
-      <div class="section-colored-line-1"></div>
-      <div class="section-grey-line"></div>
+      <div class="section-colored-line-1"/>
+      <div class="section-grey-line"/>
     </div>
     <div class="w-container">
       <section class="hero-heading-right">
@@ -24,7 +24,7 @@
                 "
                 alt=""
                 class="shadow-two"
-              />
+              >
             </div>
             <div class="hero-split">
               <sections-services-item
@@ -56,7 +56,7 @@
                 alt=""
                 sizes="(max-width: 767px) 94vw, (max-width: 991px) 687.9921875px, 413.9921875px"
                 class="shadow-two"
-              />
+              >
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
                 "
                 alt=""
                 class="shadow-two-2"
-              />
+              >
             </div>
             <div class="hero-split-2">
               <sections-services-item
@@ -108,7 +108,7 @@
                 "
                 alt=""
                 class="shadow-two-3"
-              />
+              >
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
                 "
                 alt=""
                 class="shadow-two-4"
-              />
+              >
             </div>
             <div class="hero-split-2">
               <sections-services-item
@@ -161,7 +161,7 @@
                 "
                 alt=""
                 class="shadow-two-5"
-              />
+              >
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@
                 "
                 alt=""
                 class="shadow-two-6"
-              />
+              >
             </div>
             <div class="hero-split-2">
               <sections-services-item
@@ -214,7 +214,7 @@
                 "
                 alt=""
                 class="shadow-two-5"
-              />
+              >
             </div>
           </div>
         </div>

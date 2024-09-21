@@ -31,16 +31,16 @@
           id="w-node-f1bb315c-0ecb-78cd-69b5-f7fe67af9a97-7a790fb3"
           class="hero-column-2"
         >
-          <div class="promo-image-wrapper"></div>
+          <div class="promo-image-wrapper"/>
         </div>
       </div>
     </div>
     <div class="section-title-wrapper">
-      <div class="section-grey-line"></div>
-      <div class="section-colored-line-2"></div>
+      <div class="section-grey-line"/>
+      <div class="section-colored-line-2"/>
       <h1 class="section-title-text">{{ content?.title }}</h1>
-      <div class="section-colored-line-2"></div>
-      <div class="section-grey-line"></div>
+      <div class="section-colored-line-2"/>
+      <div class="section-grey-line"/>
     </div>
     <div class="about-wrapper w-clearfix">
       <div class="dynamic-image-wrapper">
@@ -59,7 +59,7 @@
           alt=""
           sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1279px) 47vw, 44vw"
           class="dynamic-image"
-        />
+        >
       </div>
       <div class="w-richtext">
         <div v-if="content">

@@ -1,11 +1,11 @@
 <template>
   <div class="contact-section">
     <div class="section-title-wrapper">
-      <div class="section-grey-line"></div>
-      <div class="section-colored-line-2"></div>
+      <div class="section-grey-line"/>
+      <div class="section-colored-line-2"/>
       <h1 class="section-title-text">{{ contactContent?.title }}</h1>
-      <div class="section-colored-line-2"></div>
-      <div class="section-grey-line"></div>
+      <div class="section-colored-line-2"/>
+      <div class="section-grey-line"/>
     </div>
     <div class="contact-grid">
       <div

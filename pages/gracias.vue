@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="hero-column-2">
-          <div class="promo-image-wrapper"></div>
+          <div class="promo-image-wrapper"/>
         </div>
       </div>
     </div>

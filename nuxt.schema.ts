@@ -1,5 +1,4 @@
 import { field, group } from '@nuxthq/studio/theme';
-import appConfig from './app.config';
 
 export default defineNuxtSchema({
   appConfig: {

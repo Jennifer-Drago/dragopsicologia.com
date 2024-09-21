@@ -2,13 +2,13 @@
   <section class="pricing-overview">
     <div class="container">
       <div class="section-title-wrapper">
-        <div class="section-grey-line"></div>
-        <div class="section-colored-line-1"></div>
+        <div class="section-grey-line"/>
+        <div class="section-colored-line-1"/>
         <component :is="isPage ? 'h1' : 'h2'" class="section-title-text">{{
           pricingPage?.title
         }}</component>
-        <div class="section-colored-line-1"></div>
-        <div class="section-grey-line"></div>
+        <div class="section-colored-line-1"/>
+        <div class="section-grey-line"/>
       </div>
       <div class="pricing-grid">
         <div

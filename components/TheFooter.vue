@@ -3,8 +3,9 @@
     <div class="w-layout-grid footer-grid">
       <div class="footer-column-3">
         <div class="w-layout-grid footer-links-grid">
-          <nuxt-link
+          <NuxtLink
             v-for="page in links"
+            :key="page.link"
             :to="page.link"
             v-bind="{
               ...(isCurrent(page.link) && { ariaCurrent: 'page' }),
@@ -13,7 +14,7 @@
             :class="{
               'w--current': isCurrent(page.link),
             }"
-            >{{ page.title }}</nuxt-link
+            >{{ page.title }}</NuxtLink
           >
         </div>
       </div>

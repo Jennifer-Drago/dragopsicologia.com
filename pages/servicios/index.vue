@@ -1,7 +1,9 @@
 <template>
-  <SectionsServices />
-  <SectionsAppointment />
-  <SectionsPricing />
+  <div>
+    <SectionsServices />
+    <SectionsAppointment />
+    <SectionsPricing />
+  </div>
 </template>
 
 <script setup lang="ts">

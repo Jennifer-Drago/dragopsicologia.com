@@ -35,10 +35,10 @@
           aria-haspopup="menu"
           :aria-expanded="isOpen"
           aria-controls="w-nav-overlay-0"
-          @click="isOpen = !isOpen"
           :class="{
             'w--open': isOpen,
           }"
+          @click="isOpen = !isOpen"
         >
           <img
             src="~/assets/img/62a994635e8c787272048f9c_hamburger-menu-icon.svg"
@@ -51,8 +51,8 @@
         <Transition :duration="400">
           <div
             v-if="isOpen"
-            class="w-nav-overlay"
             id="w-nav-overlay-0"
+            class="w-nav-overlay"
             :style="overlayStyles"
           >
             <nav
@@ -61,8 +61,9 @@
               :data-nav-menu-open="isOpen"
               style="transition: transform 0.4s ease"
             >
-              <nuxt-link
+              <NuxtLink
                 v-for="page in pages"
+                :key="page.link"
                 :to="page.link"
                 v-bind="{
                   ...(isCurrent(page.link) && { ariaCurrent: 'page' }),
@@ -72,7 +73,7 @@
                   'w--current': isCurrent(page.link),
                 }"
                 @click="isOpen = false"
-                >{{ page.title }}</nuxt-link
+                >{{ page.title }}</NuxtLink
               >
             </nav>
           </div>
