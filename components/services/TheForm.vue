@@ -8,12 +8,7 @@
     {{ title }}
   </h2>
   <div class="contact-form-wrapper w-form">
-    <form
-      method="POST"
-      class="contact-form"
-      action="/api/submit"
-      @submit.prevent="$event => handleSubmit($event as SubmitEvent)"
-    >
+    <form method="POST" class="contact-form" action="/api/submit">
       <input
         class="form-text-field w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32c6-107d32a4 w-input"
         maxlength="256"
