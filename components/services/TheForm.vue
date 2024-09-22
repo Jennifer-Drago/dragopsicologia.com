@@ -9,9 +9,9 @@
   </h2>
   <div class="contact-form-wrapper w-form">
     <form
+      data-static-form-name="contact"
       class="contact-form"
       enctype="multipart/form-data"
-      @submit.prevent="onSubmit"
     >
       <input
         id="name"
@@ -30,8 +30,8 @@
         type="email"
         required
       /><textarea
-        id="Message"
-        name="Message"
+        id="message"
+        name="message"
         maxlength="5000"
         placeholder="Tu mensaje..."
         required
@@ -88,21 +88,4 @@ withDefaults(
     buttonVariant: 'yellow',
   }
 );
-
-const onSubmit = async (e: Event) => {
-  const form = e.target as HTMLFormElement;
-
-  const formData = new FormData(form);
-
-  try {
-    const { data } = useFetch('/api/submit', {
-      method: 'POST',
-      body: formData,
-    });
-
-    console.log({ data });
-  } catch (error) {
-    console.error(error);
-  }
-};
 </script>
