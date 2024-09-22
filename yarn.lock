@@ -425,13 +425,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/pages-plugin-static-forms@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@cloudflare/pages-plugin-static-forms@npm:1.0.3"
-  checksum: 10c0/32cdeb5502d307f11707198c78e026fb495b2f074b0b466c8a9bac478c38d64677012042c3af7533d5fa8009c41ba8dde63c4e86d2b473f0ddd78677be228c5b
-  languageName: node
-  linkType: hard
-
 "@cloudflare/workerd-darwin-64@npm:1.20240909.0":
   version: 1.20240909.0
   resolution: "@cloudflare/workerd-darwin-64@npm:1.20240909.0"
@@ -9763,7 +9756,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nuxt-app@workspace:."
   dependencies:
-    "@cloudflare/pages-plugin-static-forms": "npm:^1.0.3"
     "@nuxt/content": "npm:^2.13.2"
     "@nuxt/eslint": "npm:^0.5.7"
     "@nuxt/fonts": "npm:^0.7.1"
