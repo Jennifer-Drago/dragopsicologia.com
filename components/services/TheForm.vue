@@ -9,9 +9,10 @@
   </h2>
   <div class="contact-form-wrapper w-form">
     <form
-      data-static-form-name="contact"
-      class="contact-form"
+      action="api/submit"
+      method="post"
       enctype="multipart/form-data"
+      class="contact-form"
     >
       <input
         id="name"
