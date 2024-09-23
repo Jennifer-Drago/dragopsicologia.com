@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
   const body = await readFormData(event);
 
-  const turnstileToken = body.get('cf-turnstile-response');
+  const turnstileToken = body.get('cf-turnstile-response') || body.get('token');
   console.log('Turnstile token:', turnstileToken);
   const response = await verifyTurnstileToken(turnstileToken as string);
 
@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
     },
     // to: [{ email: 'contacto@dragopsicologia.com' }],
     to: [{ email: 'paul@graficos.net' }],
-    replyTo: { email: email as string },
+    replyTo: { email: email as string, name: name as string },
     subject: `[Contacto Web] Nuevo mensaje de ${name}`,
     htmlContent: `
       <p>Nombre: ${name}</p>
