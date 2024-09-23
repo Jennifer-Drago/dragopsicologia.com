@@ -48,9 +48,16 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
+      <p v-if="!token">
+        Por favor, completa el siguiente campo para poder enviar el formulario.
+        Si ves que pone "Operación exitosa", es que el formulario se puede
+        enviar.
+      </p>
       <NuxtTurnstile
+        :key="route.fullPath"
         ref="turnstile"
         v-model="token"
+        :style="{ marginTop: '20px', marginBottom: '20px' }"
         :options="{ action: 'native', language: 'es' }"
       />
       <input
@@ -90,6 +97,8 @@ withDefaults(
     buttonVariant: 'yellow',
   }
 );
+
+const route = useRoute();
 
 const errorsInForm = ref(false);
 
