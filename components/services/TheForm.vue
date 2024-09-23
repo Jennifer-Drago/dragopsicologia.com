@@ -50,6 +50,7 @@
       >
       <NuxtTurnstile
         ref="turnstile"
+        v-model="token"
         :options="{ action: 'native', language: 'es' }"
       />
       <input
@@ -63,13 +64,11 @@
         value="Enviar"
       />
     </form>
-    <div class="success-message w-form-done">
-      <div>
-        ¡Gracias! Tu mensaje se ha enviado correctamente. <br />Te contactaré lo
-        antes posible
-      </div>
-    </div>
-    <div class="error-message w-form-fail">
+    <div
+      v-if="errorsInForm"
+      class="error-message w-form-fail"
+      :style="{ ...(errorsInForm && { display: 'block' }) }"
+    >
       <div>
         Uups! Algo ha fallado enviando el formulario, por favor vuelve a
         rellenarlo
@@ -92,7 +91,9 @@ withDefaults(
   }
 );
 
-const turnstile = ref();
+const errorsInForm = ref(false);
+
+const turnstile = useTemplateRef('turnstile');
 const token = ref('');
 
 const resetForm = (form: HTMLFormElement) => {
@@ -120,6 +121,7 @@ const submitForm = async (event: SubmitEvent) => {
     }
   } catch (error) {
     console.error('HTTP Error', error);
+    errorsInForm.value = true;
   }
 };
 </script>
