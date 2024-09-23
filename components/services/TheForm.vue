@@ -95,7 +95,7 @@ withDefaults(
 const turnstile = ref();
 const token = ref('');
 
-const resetForm = (form) => {
+const resetForm = (form: HTMLFormElement) => {
   form.reset();
   turnstile.value.reset();
 };

@@ -1,6 +1,4 @@
-import SibApiV3Sdk, {
-  TransactionalEmailsApiApiKeys,
-} from 'sib-api-v3-typescript';
+import brevo, { TransactionalEmailsApiApiKeys } from '@getbrevo/brevo';
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -26,7 +24,7 @@ export default defineEventHandler(async (event) => {
     to: [{ email: 'paul@graficos.net' }],
     replyTo: { email: email as string },
     subject: `[Contacto Web] Nuevo mensaje de ${name}`,
-    textContent: `
+    htmlContent: `
       <p>Nombre: ${name}</p>
       <p>Email: ${email}</p>
       <p>Mensaje: ${message}</p>
@@ -34,19 +32,19 @@ export default defineEventHandler(async (event) => {
     tags: ['ContactoWeb'],
   };
 
-  const defaultClient = new SibApiV3Sdk.TransactionalEmailsApi();
+  const defaultClient = new brevo.TransactionalEmailsApi();
   defaultClient.setApiKey(
     TransactionalEmailsApiApiKeys.apiKey,
     config.brevo.apiKey
   );
 
-  const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
+  const sendSmtpEmail = new brevo.SendSmtpEmail();
 
   sendSmtpEmail.sender = mail.sender;
   sendSmtpEmail.to = mail.to;
   sendSmtpEmail.replyTo = mail.replyTo;
   sendSmtpEmail.subject = mail.subject;
-  sendSmtpEmail.textContent = mail.textContent;
+  sendSmtpEmail.htmlContent = mail.htmlContent;
   sendSmtpEmail.tags = mail.tags;
 
   try {
