@@ -5,6 +5,7 @@
     v-model="token"
     :style="{ marginTop: '20px', marginBottom: '20px' }"
     :options="{ action: 'native', language: 'es' }"
+    :data-t="token"
   />
 </template>
 

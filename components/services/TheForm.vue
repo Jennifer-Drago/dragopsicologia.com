@@ -95,6 +95,7 @@ const token = ref('');
 const resetForm = (form: HTMLFormElement) => {
   form.reset();
   captcha.value?.reset();
+  errorsInForm.value = false;
 };
 
 const submitForm = async (event: SubmitEvent) => {
