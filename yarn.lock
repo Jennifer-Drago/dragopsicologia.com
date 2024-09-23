@@ -2118,6 +2118,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nuxtjs/turnstile@npm:^0.9.10":
+  version: 0.9.10
+  resolution: "@nuxtjs/turnstile@npm:0.9.10"
+  dependencies:
+    "@nuxt/kit": "npm:^3.13.2"
+    "@types/cloudflare-turnstile": "npm:0.2.2"
+    defu: "npm:^6.1.4"
+    pathe: "npm:^1.1.2"
+  peerDependencies:
+    "@nuxt/scripts": ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0
+  checksum: 10c0/6f59aae278d7fc74f1974c2bf425d3684a7002156982ab3a23e52080dfe9bb7e936cad413a7f5c5a539d4aa909f08a30dd0d53085b8d8f3019da25b7ff0be81d
+  languageName: node
+  linkType: hard
+
 "@parcel/watcher-android-arm64@npm:2.4.1":
   version: 2.4.1
   resolution: "@parcel/watcher-android-arm64@npm:2.4.1"
@@ -2689,6 +2703,13 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 10c0/44907308549ce775a41c38a815f747009ac45929a45d642b836aa6b0a536e4978d30b8d7d680bbd116e9dd73b7dbe2ef0d1369dcfc2d09e83ba381e485ecbe12
+  languageName: node
+  linkType: hard
+
+"@types/cloudflare-turnstile@npm:0.2.2":
+  version: 0.2.2
+  resolution: "@types/cloudflare-turnstile@npm:0.2.2"
+  checksum: 10c0/17dcd6b22cd8c03fc3699b88b1b30d0fac3997557a4189e922aec7f632b8c287b394170cbf09a63598617b3e9a37e65ea6dce3af392e5df02f870e6d6858c0cc
   languageName: node
   linkType: hard
 
@@ -9762,6 +9783,7 @@ __metadata:
     "@nuxt/image": "npm:^1.7.0"
     "@nuxt/scripts": "npm:^0.9.1"
     "@nuxthq/studio": "npm:^2.0.3"
+    "@nuxtjs/turnstile": "npm:^0.9.10"
     "@types/nodemailer": "npm:^6.4.16"
     "@vueuse/core": "npm:^10.11.0"
     eslint: "npm:^9.11.0"

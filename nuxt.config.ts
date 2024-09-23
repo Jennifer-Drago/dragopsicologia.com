@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       smtp: process.env.SMTP_PASSWORD,
       user: process.env.SMTP_USER,
     },
+    turnstile: {
+      secretKey: process.env.TURNSTILE_SECRET_KEY,
+    },
   },
 
   app: {
@@ -85,7 +88,16 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     // experimental
     'nitro-cloudflare-dev',
+    '@nuxtjs/turnstile',
   ],
+  nitro: {
+    preset: 'cloudflare-pages',
+    prerender: {
+      // https://nuxt.com/deploy/cloudflare#route-matching
+      autoSubfolderIndex: false,
+    },
+  },
+  // Modules
   content: {
     markdown: {
       anchorLinks: false,
@@ -96,11 +108,7 @@ export default defineNuxtConfig({
       { name: 'Poppins', provider: 'google', weights: [400, 600, 700] },
     ],
   },
-  nitro: {
-    preset: 'cloudflare-pages',
-    prerender: {
-      // https://nuxt.com/deploy/cloudflare#route-matching
-      autoSubfolderIndex: false,
-    },
+  turnstile: {
+    siteKey: process.env.TURNSTILE_SITE_KEY,
   },
 });

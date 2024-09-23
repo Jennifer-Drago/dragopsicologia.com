@@ -9,10 +9,8 @@
   </h2>
   <div class="contact-form-wrapper w-form">
     <form
-      action="api/submit"
-      method="post"
-      enctype="multipart/form-data"
       class="contact-form"
+      @submit.prevent="e => submitForm(e as SubmitEvent)"
     >
       <input
         id="name"
@@ -50,6 +48,10 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
+      <NuxtTurnstile
+        ref="turnstile"
+        :options="{ action: 'native', language: 'es' }"
+      />
       <input
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
         type="submit"
@@ -89,4 +91,35 @@ withDefaults(
     buttonVariant: 'yellow',
   }
 );
+
+const turnstile = ref();
+const token = ref('');
+
+const resetForm = (form) => {
+  form.reset();
+  turnstile.value.reset();
+};
+
+const submitForm = async (event: SubmitEvent) => {
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
+  formData.append('token', token.value);
+
+  try {
+    const response = await useFetch('/api/submit', {
+      method: 'POST',
+      body: formData,
+    });
+
+    resetForm(form);
+
+    if (response.status.value === 'success') {
+      navigateTo('/gracias');
+    } else {
+      console.error('Error sending form', response.data.value);
+    }
+  } catch (error) {
+    console.error('HTTP Error', error);
+  }
+};
 </script>

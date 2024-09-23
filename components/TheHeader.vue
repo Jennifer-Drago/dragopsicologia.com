@@ -102,6 +102,14 @@ const isCurrent = (routePath: string) =>
 
 // Static data
 const pages = useAppConfig().links.header || [];
+
+// Close menu on route change
+watch(
+  () => router.currentRoute.value,
+  () => {
+    isOpen.value = false;
+  }
+);
 </script>
 
 <style lang="css" scoped>
