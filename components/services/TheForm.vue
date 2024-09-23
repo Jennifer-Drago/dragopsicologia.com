@@ -116,7 +116,7 @@ const submitForm = async (event: SubmitEvent) => {
     if (response.status.value === 'success') {
       navigateTo('/gracias');
     } else {
-      console.error('Error sending form', response.data.value);
+      console.error('Error sending form:', response.data.value);
     }
   } catch (error) {
     console.error('HTTP Error', error);
