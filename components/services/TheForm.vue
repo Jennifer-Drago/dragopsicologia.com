@@ -103,17 +103,17 @@ const submitForm = async (event: SubmitEvent) => {
   formData.append('token', token.value);
 
   try {
-    const response = await useFetch('/api/submit', {
+    const response = await $fetch('/api/submit', {
       method: 'POST',
       body: formData,
     });
 
     resetForm(form);
 
-    if (response.status.value === 'success') {
+    if (response.ok) {
       navigateTo('/gracias');
     } else {
-      console.error('Error sending form:', response.error);
+      console.error('Error sending form:', response.statusText);
     }
   } catch (error) {
     console.error('HTTP Error', error);

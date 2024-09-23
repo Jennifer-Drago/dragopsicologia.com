@@ -14,4 +14,9 @@ const token = defineModel('token', { type: String });
 const turnstile = useTemplateRef('turnstile');
 
 defineExpose({ reset: () => turnstile.value?.reset || (() => {}) });
+
+onErrorCaptured((error) => {
+  console.error('TheCaptcha.vue', error);
+  return true;
+});
 </script>
