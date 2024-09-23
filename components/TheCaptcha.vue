@@ -1,6 +1,6 @@
 <template>
   <NuxtTurnstile
-    :key="route.fullPath"
+    :key="useId()"
     ref="turnstile"
     v-model="token"
     :style="{ marginTop: '20px', marginBottom: '20px' }"
@@ -14,9 +14,4 @@ const token = defineModel('token', { type: String });
 const turnstile = useTemplateRef('turnstile');
 
 defineExpose({ reset: () => turnstile.value?.reset || (() => {}) });
-
-const route = useRoute();
-watch(route, () => {
-  turnstile.value.reset();
-});
 </script>

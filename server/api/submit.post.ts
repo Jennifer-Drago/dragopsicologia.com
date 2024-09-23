@@ -1,7 +1,7 @@
 import brevo, { TransactionalEmailsApiApiKeys } from '@getbrevo/brevo';
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig();
+  const config = useRuntimeConfig(event);
   const body = await readFormData(event);
 
   const turnstileToken = body.get('cf-turnstile-response');
