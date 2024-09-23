@@ -48,18 +48,7 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
-      <p v-if="!token">
-        Por favor, completa el siguiente campo para poder enviar el formulario.
-        Si ves que pone "Operación exitosa", es que el formulario se puede
-        enviar.
-      </p>
-      <NuxtTurnstile
-        :key="route.fullPath"
-        ref="turnstile"
-        v-model="token"
-        :style="{ marginTop: '20px', marginBottom: '20px' }"
-        :options="{ action: 'native', language: 'es' }"
-      />
+      <TheCaptcha v-model:token="token" ref="captcha" />
       <input
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
         type="submit"
@@ -98,16 +87,14 @@ withDefaults(
   }
 );
 
-const route = useRoute();
-
 const errorsInForm = ref(false);
 
-const turnstile = useTemplateRef('turnstile');
+const captcha = useTemplateRef('captcha');
 const token = ref('');
 
 const resetForm = (form: HTMLFormElement) => {
   form.reset();
-  turnstile.value.reset();
+  captcha.value?.reset();
 };
 
 const submitForm = async (event: SubmitEvent) => {
@@ -126,7 +113,7 @@ const submitForm = async (event: SubmitEvent) => {
     if (response.status.value === 'success') {
       navigateTo('/gracias');
     } else {
-      console.error('Error sending form:', response.data.value);
+      console.error('Error sending form:', response.error);
     }
   } catch (error) {
     console.error('HTTP Error', error);
