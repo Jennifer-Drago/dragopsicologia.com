@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "NODE_OPTIONS=--max_old_space_size=4096 nuxt build",
+    "build": "NODE_OPTIONS=--max_old_space_size=4096 nuxt build --preset='cloudflare-pages'",
     "dev": "nuxt dev",
+    "preview": "yarn build && yarn dlx wrangler pages dev dist",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "husky && nuxt prepare"
