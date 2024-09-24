@@ -4,16 +4,19 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event);
   const body = await readFormData(event);
 
-  const turnstileToken = body.get('cf-turnstile-response') || body.get('token');
-  console.log('Turnstile token:', turnstileToken);
+  // FormData to JSON
+  const {
+    name,
+    email,
+    message,
+    token: turnstileToken,
+  } = Object.fromEntries(body);
+
   const response = await verifyTurnstileToken(turnstileToken as string);
 
   if (!response.success) {
     return new Response('Validation Error', { status: 403 });
   }
-
-  // FormData to JSON
-  const { name, email, message } = Object.fromEntries(body);
 
   const mail = {
     sender: {

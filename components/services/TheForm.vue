@@ -99,6 +99,7 @@ const resetForm = (form: HTMLFormElement) => {
 };
 
 const submitForm = async (event: SubmitEvent) => {
+  errorsInForm.value = false;
   const form = event.target as HTMLFormElement;
   const formData = new FormData(form);
   formData.append('token', token.value);
