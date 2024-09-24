@@ -12,50 +12,67 @@ export default defineEventHandler(async (event) => {
     token: turnstileToken,
   } = Object.fromEntries(body);
 
-  const response = await verifyTurnstileToken(turnstileToken as string);
-
-  if (!response.success) {
-    return new Response('Validation Error', { status: 403 });
-  }
-
-  const mail = {
-    sender: {
-      email: 'contacto@dragopsicologia.com',
-      name: '[Contacto Web] Dragopsicología.com',
+  // Validate the token by calling the
+  // "/siteverify" API endpoint.
+  const ip = getHeader(event, 'CF-Connecting-IP');
+  const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+  const validationApiResponse = await $fetch(url, {
+    body: JSON.stringify({
+      secret: config.turnstile.secretKey,
+      response: turnstileToken,
+      remoteip: ip,
+    }),
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-    // to: [{ email: 'contacto@dragopsicologia.com' }],
-    to: [{ email: 'paul@graficos.net' }],
-    replyTo: { email: email as string, name: name as string },
-    subject: `[Contacto Web] Nuevo mensaje de ${name}`,
-    htmlContent: `
+  });
+  // If the token is valid, send the email
+  if ((validationApiResponse as { success?: boolean })?.success) {
+    const mail = {
+      sender: {
+        email: 'contacto@dragopsicologia.com',
+        name: '[Contacto Web] Dragopsicología.com',
+      },
+      // to: [{ email: 'contacto@dragopsicologia.com' }],
+      to: [{ email: 'paul@graficos.net' }],
+      replyTo: { email: email as string, name: name as string },
+      subject: `[Contacto Web] Nuevo mensaje de ${name}`,
+      htmlContent: `
       <p>Nombre: ${name}</p>
       <p>Email: ${email}</p>
       <p>Mensaje: ${message}</p>
     `,
-    tags: ['ContactoWeb'],
-  };
+      tags: ['ContactoWeb'],
+    };
 
-  const defaultClient = new brevo.TransactionalEmailsApi();
-  defaultClient.setApiKey(
-    TransactionalEmailsApiApiKeys.apiKey,
-    config.brevo.apiKey
-  );
+    const defaultClient = new brevo.TransactionalEmailsApi();
+    defaultClient.setApiKey(
+      TransactionalEmailsApiApiKeys.apiKey,
+      config.brevo.apiKey
+    );
 
-  const sendSmtpEmail = new brevo.SendSmtpEmail();
+    const sendSmtpEmail = new brevo.SendSmtpEmail();
 
-  sendSmtpEmail.sender = mail.sender;
-  sendSmtpEmail.to = mail.to;
-  sendSmtpEmail.replyTo = mail.replyTo;
-  sendSmtpEmail.subject = mail.subject;
-  sendSmtpEmail.htmlContent = mail.htmlContent;
-  sendSmtpEmail.tags = mail.tags;
+    sendSmtpEmail.sender = mail.sender;
+    sendSmtpEmail.to = mail.to;
+    sendSmtpEmail.replyTo = mail.replyTo;
+    sendSmtpEmail.subject = mail.subject;
+    sendSmtpEmail.htmlContent = mail.htmlContent;
+    sendSmtpEmail.tags = mail.tags;
 
-  try {
-    await defaultClient.sendTransacEmail(sendSmtpEmail);
+    try {
+      await defaultClient.sendTransacEmail(sendSmtpEmail);
 
-    return new Response('Success', { status: 200 });
-  } catch (error) {
-    console.error(error);
-    return new Response('Error', { status: 500 });
+      return new Response('Success', { status: 200 });
+    } catch (error) {
+      console.error(error);
+      return new Response('Error', { status: 500 });
+    }
   }
+
+  return new Response('Validation Error', {
+    status: 403,
+    statusText: JSON.stringify(validationApiResponse),
+  });
 });
