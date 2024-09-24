@@ -16,19 +16,22 @@ export default defineEventHandler(async (event) => {
   // "/siteverify" API endpoint.
   const ip = getHeader(event, 'CF-Connecting-IP');
   const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
-  const validationApiResponse = await $fetch(url, {
-    body: JSON.stringify({
-      secret: config.turnstile.secretKey,
-      response: turnstileToken,
-      remoteip: ip,
-    }),
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const validationApiResponse = await (
+    await fetch(url, {
+      body: JSON.stringify({
+        secret: config.turnstile.secretKey,
+        response: turnstileToken,
+        remoteip: ip,
+      }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+  ).json();
   // If the token is valid, send the email
-  if ((validationApiResponse as { success?: boolean })?.success) {
+  if (validationApiResponse?.success) {
     const mail = {
       sender: {
         email: 'contacto@dragopsicologia.com',
@@ -72,7 +75,7 @@ export default defineEventHandler(async (event) => {
   }
 
   return new Response('Validation Error', {
-    status: 403,
+    status: 422,
     statusText: JSON.stringify(validationApiResponse),
   });
 });
