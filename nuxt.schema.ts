@@ -87,5 +87,38 @@ export default defineNuxtSchema({
         }),
       },
     }),
+    email: group({
+      title: 'Configuración de email',
+      icon: 'i-mdi-email',
+      fields: {
+        sender: group({
+          title: 'Sender (Remitente)',
+          fields: {
+            email: field({
+              type: 'string',
+              title: 'Email',
+              description: 'Email del remitente',
+              icon: 'i-mdi-email',
+              default: 'contacto@dragopsicologia.com',
+            }),
+            name: field({
+              type: 'string',
+              title: 'Nombre',
+              description: 'Nombre del remitente',
+              icon: 'i-mdi-account',
+              default: '[Contacto Web] Dragopsicología.com',
+            }),
+          },
+        }),
+        subjectTemplate: field({
+          type: 'string',
+          title: 'Plantilla de asunto',
+          description:
+            'Plantilla para el asunto del email. Puedes usar la variable `{{name}}`',
+          icon: 'i-mdi-email',
+          default: '[Contacto Web] Nuevo mensaje de {{name}}',
+        }),
+      },
+    }),
   },
 });

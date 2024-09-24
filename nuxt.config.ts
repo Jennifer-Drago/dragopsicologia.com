@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     turnstile: {
       secretKey: process.env.TURNSTILE_SECRET_KEY,
     },
+    zoho: {
+      token: process.env.ZOHO_SEND_MAIL_TOKEN,
+    },
   },
 
   app: {

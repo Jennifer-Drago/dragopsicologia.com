@@ -38,4 +38,11 @@ export default defineAppConfig({
       { link: '/politica-de-privacidad', title: 'Política de privacidad' },
     ],
   },
+  email: {
+    sender: {
+      email: 'contacto@dragopsicologia.com',
+      name: '[Contacto Web] Dragopsicología.com',
+    },
+    subjectTemplate: `[Contacto Web] Nuevo mensaje de {{name}}`,
+  },
 });
