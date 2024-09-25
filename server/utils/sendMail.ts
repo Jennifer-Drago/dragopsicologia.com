@@ -32,7 +32,7 @@ export const sendMail = async ({
     to: [
       {
         email_address: {
-          address: 'paulmelero@gmail.com',
+          address: 'dragopsicologia@gmail.com',
           name: '🧠',
         },
       },
