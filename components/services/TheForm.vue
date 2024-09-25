@@ -48,7 +48,7 @@
           >He leído y acepto la política de privacidad</span
         ></label
       >
-      <TheCaptcha ref="captcha" v-model:token="token" />
+      <div :key="captchaId" class="cf-turnstile" :data-sitekey="siteKey"></div>
       <input
         id="w-node-_092ba6a6-7c27-4abc-017c-d3fd107d32ce-107d32a4"
         type="submit"
@@ -89,12 +89,12 @@ withDefaults(
 
 const errorsInForm = ref(false);
 
-const captcha = useTemplateRef('captcha');
+const siteKey = useRuntimeConfig().public.turnstileSiteKey;
+const captchaId = useId();
 const token = ref('');
 
 const resetForm = (form: HTMLFormElement) => {
   form.reset();
-  captcha.value?.reset();
   errorsInForm.value = false;
 };
 
@@ -112,7 +112,7 @@ const submitForm = async (event: SubmitEvent) => {
 
     resetForm(form);
 
-    if (response.ok) {
+    if (response.ok || (response as unknown as string) === 'Email sent') {
       navigateTo('/gracias');
     } else {
       console.error('Error sending form:', response.statusText);

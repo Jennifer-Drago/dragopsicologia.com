@@ -22,7 +22,7 @@ export const sendMail = async ({
   const url = 'api.zeptomail.eu/';
 
   // https://www.npmjs.com/package/zeptomail
-  let client = new SendMailClient({ url, token: runtimeConfig.zoho.token });
+  const client = new SendMailClient({ url, token: runtimeConfig.zoho.token });
 
   return client.sendMail({
     from: {

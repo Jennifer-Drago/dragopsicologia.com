@@ -3,24 +3,23 @@ import { validateCaptcha } from '../utils/validateCaptcha';
 
 export default defineEventHandler(async (event) => {
   try {
-    console.log('Handler started');
+    // console.log('Handler started');
 
     const body = await readFormData(event);
-    console.log('Form data read:', body);
+    // console.log('Form data read:', body);
 
     // FormData to JSON
     const {
       name,
       email,
       message,
-      token: turnstileToken,
+      'cf-turnstile-response': turnstileToken,
     } = Object.fromEntries(body);
 
+    const token = String(turnstileToken);
+
     // Validate the token by calling the "/siteverify" API endpoint.
-    const { validationApiResponse } = await validateCaptcha(
-      event,
-      turnstileToken
-    );
+    const { validationApiResponse } = await validateCaptcha(event, token);
 
     // If the token is invalid, return a 422 status code
     if (!('success' in validationApiResponse)) {

@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     zoho: {
       token: process.env.ZOHO_SEND_MAIL_TOKEN,
     },
+    public: {
+      turnstileSiteKey: process.env.TURNSTILE_SITE_KEY,
+    },
   },
 
   app: {
@@ -113,5 +116,15 @@ export default defineNuxtConfig({
   },
   turnstile: {
     siteKey: process.env.TURNSTILE_SITE_KEY,
+  },
+  scripts: {
+    globals: {
+      myScript: [
+        'https://challenges.cloudflare.com/turnstile/v0/api.js',
+        {
+          trigger: 'onNuxtReady',
+        },
+      ],
+    },
   },
 });

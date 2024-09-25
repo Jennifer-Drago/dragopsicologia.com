@@ -2,7 +2,7 @@ import type { H3Event, EventHandlerRequest } from 'h3';
 
 export const validateCaptcha = async (
   event: H3Event<EventHandlerRequest>,
-  token: FormDataEntryValue | string
+  token: string
 ): Promise<{
   validationApiResponse: { success: boolean } | { error: string };
 }> => {
@@ -25,7 +25,7 @@ export const validateCaptcha = async (
     })
   ).json();
 
-  console.log('Validation API response:', validationApiResponse);
+  // console.log('Validation API response:', validationApiResponse);
 
   return { validationApiResponse };
 };
