@@ -6,6 +6,7 @@
     "build": "NODE_OPTIONS=--max_old_space_size=4096 nuxt build --preset='cloudflare-pages'",
     "dev": "nuxt dev",
     "preview": "yarn build && yarn dlx wrangler pages dev dist",
+    "logs": "yarn dlx wrangler pages deployment tail",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "husky && nuxt prepare"
