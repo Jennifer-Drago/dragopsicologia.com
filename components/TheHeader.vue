@@ -5,7 +5,6 @@
     data-duration="400"
     data-easing="ease"
     data-easing2="ease"
-    role="banner"
     class="navbar shadow-nav w-nav"
   >
     <div class="navbar-wrapper">
@@ -54,6 +53,7 @@
             id="w-nav-overlay-0"
             class="w-nav-overlay"
             :style="overlayStyles"
+            @click="isOpen = false"
           >
             <nav
               role="navigation"

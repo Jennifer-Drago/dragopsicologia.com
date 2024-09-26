@@ -35,6 +35,7 @@ export default defineAppConfig({
     ],
     footer: [
       { link: '/aviso-legal', title: 'Aviso legal' },
+      { link: '/politica-de-cookies', title: 'Política de cookies' },
       { link: '/politica-de-privacidad', title: 'Política de privacidad' },
     ],
   },
