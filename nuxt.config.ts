@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2024-09-19',
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
 
@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxt/fonts',
+    '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/eslint',
     // experimental
