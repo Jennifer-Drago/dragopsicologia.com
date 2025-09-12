@@ -28,7 +28,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    alignText: 'right' | 'left';
+    alignText?: 'right' | 'left';
   }>(),
   {
     alignText: 'right',
