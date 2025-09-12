@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "dragopsicologia",
   "private": true,
   "type": "module",
   "scripts": {
@@ -20,7 +20,7 @@
     "@nuxthq/studio": "^2.0.3",
     "@nuxtjs/turnstile": "^0.9.10",
     "@vueuse/core": "^10.11.0",
-    "nuxt": "3.13.1",
+    "nuxt": "^4.1.1",
     "unstorage": "^1.10.2",
     "vue": "latest",
     "zeptomail": "^6.0.0"
@@ -28,8 +28,8 @@
   "devDependencies": {
     "eslint": "^9.11.0",
     "husky": "^9.1.6",
-    "nitro-cloudflare-dev": "^0.1.6",
-    "typescript": "^5.6.2",
+    "nitro-cloudflare-dev": "^0.2.2",
+    "typescript": "^5.9.2",
     "wrangler": "^3.78.7"
   },
   "engines": {
