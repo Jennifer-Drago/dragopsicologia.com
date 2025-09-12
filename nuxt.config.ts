@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxt/fonts',
+    '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/eslint',
     // experimental

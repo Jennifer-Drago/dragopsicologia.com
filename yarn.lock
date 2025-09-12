@@ -1814,25 +1814,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/image@npm:^1.7.0":
-  version: 1.8.0
-  resolution: "@nuxt/image@npm:1.8.0"
+"@nuxt/image@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "@nuxt/image@npm:1.11.0"
   dependencies:
-    "@nuxt/kit": "npm:^3.13.0"
-    consola: "npm:^3.2.3"
+    "@nuxt/kit": "npm:^3.18.0"
+    consola: "npm:^3.4.2"
     defu: "npm:^6.1.4"
-    h3: "npm:^1.12.0"
+    h3: "npm:^1.15.3"
     image-meta: "npm:^0.2.1"
-    ipx: "npm:^2.1.0"
-    node-fetch-native: "npm:^1.6.4"
-    ohash: "npm:^1.1.3"
-    pathe: "npm:^1.1.2"
-    std-env: "npm:^3.7.0"
-    ufo: "npm:^1.5.4"
+    ipx: "npm:^2.1.1"
+    knitwork: "npm:^1.2.0"
+    ohash: "npm:^2.0.11"
+    pathe: "npm:^2.0.3"
+    std-env: "npm:^3.9.0"
+    ufo: "npm:^1.6.1"
   dependenciesMeta:
     ipx:
       optional: true
-  checksum: 10c0/772c696f1dd45f9a41d252ffc0fa345702c08bb747e2a53abff13a331e6a1e03a87e05597cc4a9e113174bb0aa3227683fb93b376af249ffdb9c6cb5d06d395b
+  checksum: 10c0/ed95f2d3abe98e181b8448a88a456891402d3843364dcf366a1c686cc0ec1e52c2fa661926d67ad3e3dc3a19c92b03947786934ce8c8a35f0f2b41cf64f0dcdc
   languageName: node
   linkType: hard
 
@@ -1866,7 +1866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.12.1, @nuxt/kit@npm:^3.12.2, @nuxt/kit@npm:^3.12.4, @nuxt/kit@npm:^3.13.0, @nuxt/kit@npm:^3.13.1, @nuxt/kit@npm:^3.13.2, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.18.1":
+"@nuxt/kit@npm:^3.12.1, @nuxt/kit@npm:^3.12.2, @nuxt/kit@npm:^3.12.4, @nuxt/kit@npm:^3.13.1, @nuxt/kit@npm:^3.13.2, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.18.0, @nuxt/kit@npm:^3.18.1":
   version: 3.19.1
   resolution: "@nuxt/kit@npm:3.19.1"
   dependencies:
@@ -5923,7 +5923,7 @@ __metadata:
     "@nuxt/content": "npm:^2.13.2"
     "@nuxt/eslint": "npm:^1.9.0"
     "@nuxt/fonts": "npm:^0.7.1"
-    "@nuxt/image": "npm:^1.7.0"
+    "@nuxt/image": "npm:^1.11.0"
     "@nuxt/scripts": "npm:^0.9.3"
     "@nuxthq/studio": "npm:^2.0.3"
     "@nuxtjs/turnstile": "npm:^0.9.10"
@@ -7734,9 +7734,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipx@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "ipx@npm:2.1.0"
+"ipx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "ipx@npm:2.1.1"
   dependencies:
     "@fastify/accept-negotiator": "npm:^1.1.0"
     citty: "npm:^0.1.5"
@@ -7756,7 +7756,7 @@ __metadata:
     xss: "npm:^1.0.14"
   bin:
     ipx: bin/ipx.mjs
-  checksum: 10c0/04a4f968c9f7bdf9838f3381d85892c55042e9d68a59338d68659ffcb1a779a345a4473a4ef68eede3255954b64bacbd66b778e60952131fc928456286efa444
+  checksum: 10c0/68b39b7143244fdce1bb8fa51c501abf68f6fa782ae217b97c3b23838590254c4a51368b1d657a3aee573d410f07d5199a45a1c976d164b4eb2db1cba80d9f68
   languageName: node
   linkType: hard
 

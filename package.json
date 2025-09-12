@@ -15,7 +15,7 @@
     "@nuxt/content": "^2.13.2",
     "@nuxt/eslint": "^1.9.0",
     "@nuxt/fonts": "^0.7.1",
-    "@nuxt/image": "^1.7.0",
+    "@nuxt/image": "^1.11.0",
     "@nuxt/scripts": "^0.9.3",
     "@nuxthq/studio": "^2.0.3",
     "@nuxtjs/turnstile": "^0.9.10",
@@ -33,7 +33,7 @@
     "wrangler": "^3.78.7"
   },
   "engines": {
-    "node": ">=20.17.0"
+    "node": ">=22.16.0"
   },
   "packageManager": "yarn@4.2.2"
 }
