@@ -3169,6 +3169,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^24.3.2":
+  version: 24.3.2
+  resolution: "@types/node@npm:24.3.2"
+  dependencies:
+    undici-types: "npm:~7.10.0"
+  checksum: 10c0/178ec152b66b399956a5fd8f266b03c3b350bc4699480fba8f997c0cfe4925fe9482a93085ca3c4caa1f18465ad22dcf780ee005162cdf5e2f71696f65a0cf13
+  languageName: node
+  linkType: hard
+
 "@types/parse-path@npm:^7.0.0":
   version: 7.0.3
   resolution: "@types/parse-path@npm:7.0.3"
@@ -5461,6 +5470,7 @@ __metadata:
     "@nuxt/scripts": "npm:^0.11.0"
     "@nuxthq/studio": "npm:^2.0.3"
     "@nuxtjs/turnstile": "npm:^1.1.0"
+    "@types/node": "npm:^24.3.2"
     "@unhead/vue": "npm:^2.0.3"
     "@vueuse/core": "npm:^10.11.0"
     eslint: "npm:^9.35.0"
@@ -5471,7 +5481,7 @@ __metadata:
     unstorage: "npm:^1.10.2"
     vue: "npm:latest"
     wrangler: "npm:^3.78.7"
-    zeptomail: "npm:^6.0.0"
+    zeptomail: "npm:^6.2.1"
   languageName: unknown
   linkType: soft
 
@@ -11820,6 +11830,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~7.10.0":
+  version: 7.10.0
+  resolution: "undici-types@npm:7.10.0"
+  checksum: 10c0/8b00ce50e235fe3cc601307f148b5e8fb427092ee3b23e8118ec0a5d7f68eca8cee468c8fc9f15cbb2cf2a3797945ebceb1cbd9732306a1d00e0a9b6afa0f635
+  languageName: node
+  linkType: hard
+
 "undici@npm:^5.28.5":
   version: 5.29.0
   resolution: "undici@npm:5.29.0"
@@ -13001,7 +13018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zeptomail@npm:^6.0.0":
+"zeptomail@npm:^6.2.1":
   version: 6.2.1
   resolution: "zeptomail@npm:6.2.1"
   dependencies:
