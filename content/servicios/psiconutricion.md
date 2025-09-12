@@ -19,5 +19,3 @@ Alguno de los beneficios que puedes obtener con la atención en psiconutrición 
 - Entender cómo me afecta psicológica y emocionalmente la comida.
 
 Si quieres trabajar en ello, te invito a que contactes conmigo y busquemos juntas las herramientas para dejar de luchar con tu alimentación.
-
-‍
