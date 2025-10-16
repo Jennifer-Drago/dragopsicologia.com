@@ -4,7 +4,7 @@
 
 ::ul{class="list-2"}
 
-  <li>El tiempo de la sesión, 50 minutos para sesión individual o 90 minutos para sesión en grupo.</li>
+  <li>El tiempo de la sesión, 50 minutos para sesión individual o 60 minutos para sesión en grupo.</li>
   <li>Preparación de tu caso entre visitas.</li>
   <li>Tareas específicas para tu caso.</li>
   <li>Aplicación de test psicológicos cuando sea necesario.</li>
